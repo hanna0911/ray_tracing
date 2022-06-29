@@ -68,7 +68,7 @@ Vector3f RayCaster::traceRay(const Ray &camRay) {
 
 void RayTracer::render() {
 
-    /*
+    
     Camera *cam = scene->getCamera();
     int image_width = cam->getWidth();
     int image_height = cam->getHeight();
@@ -84,24 +84,24 @@ void RayTracer::render() {
     std::cout << objects->objects.size() << std::endl;
 
     std::cout << scene->getNumMaterials() << std::endl;
-    */
-    int image_width = 400;
-    auto aspect_ratio = 16.0 / 9.0; 
+    
+    // int image_width = 400;
+    // auto aspect_ratio = 16.0 / 9.0; 
 
     // 暂时强行改变scene =================================
-    
+    /*
     // auto objects = make_shared<Group>();
     Group objects;
     auto checker = make_shared<checker_texture>(Vector3f(0.2, 0.3, 0.1), Vector3f(0.9, 0.9, 0.9));
 
     objects.add(make_shared<Sphere>(Vector3f(0,-10, 0), 10, make_shared<lambertian>(checker)));
     objects.add(make_shared<Sphere>(Vector3f(0, 10, 0), 10, make_shared<lambertian>(checker)));
-    
+    */
     // =================================================
     
 
     // 暂时强行改变camera ================================
-    
+    /*
     Vector3f background = Vector3f(0.70, 0.80, 1.00);
     Vector3f lookfrom = Vector3f(13,2,3);
     Vector3f lookat = Vector3f(0,0,0);
@@ -112,7 +112,7 @@ void RayTracer::render() {
     int image_height = static_cast<int>(image_width / aspect_ratio);
     Camera *cam = new Camera(image_width, image_height, lookfrom, lookat, vup, 20, aspect_ratio, aperture, dist_to_focus, 0.0, 1.0);
     Image image(image_width, image_height);
-    
+    */
     // =================================================
 
     // Anti-aliasing
@@ -256,7 +256,7 @@ void RayTracer::render() {
     image.SaveImage(output);
 }
 
-Vector3f RayTracer::traceRay(const Ray& r, int depth, const Vector3f &background, const Group world) {
+Vector3f RayTracer::traceRay(const Ray& r, int depth, const Vector3f &background, shared_ptr<Group> world) {
 // Vector3f RayTracer::traceRay(const Ray& r, int depth, const Vector3f &background, const shared_ptr<Group> world) {
     // Vector3f background = scene->getBackgroundColor();
     // Group *world = scene->getGroup();
@@ -267,7 +267,7 @@ Vector3f RayTracer::traceRay(const Ray& r, int depth, const Vector3f &background
         return Vector3f::ZERO;
 
     // If the ray hits nothing, return the background color.
-    if (!world.hit(r, 0.001, infinity, rec))
+    if (!world->hit(r, 0.001, infinity, rec))
         return background;
 
     Ray scattered;

@@ -33,8 +33,8 @@ public:
 protected:
     int samples; // samples_per_pixel
     int depth; // max_depth
-    // Vector3f traceRay(const Ray& r, int depth, const Vector3f &background, const shared_ptr<Group> world);
-    Vector3f traceRay(const Ray& r, int depth, const Vector3f &background, const Group world);
+    Vector3f traceRay(const Ray& r, int depth, const Vector3f &background, shared_ptr<Group> world);
+    // Vector3f traceRay(const Ray& r, int depth, const Vector3f &background, const Group world);
 };
 
 #endif
