@@ -1,0 +1,38 @@
+
+Camera {
+    lookfrom 13 2 3
+    lookat 0 0 0
+    vfov 20.0
+    aperture 0.0
+    vup 0 1 0
+    focus_dist 10.0
+    time0 0
+    time1 0
+    width 400
+    height 225
+}
+
+Lights {
+    numLights 0
+}
+
+Materials {
+    numMaterials 1
+    lambertian {
+        image earthmap.jpg
+    }
+}
+
+Background {
+    color 0.7 0.8 1.0
+}
+
+Group {
+    numObjects 1
+    MaterialIndex 0
+    Sphere {
+        center 0 0 0
+        radius 2
+    }
+}
+

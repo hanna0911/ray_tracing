@@ -82,6 +82,17 @@ void RayTracer::render() {
 
     // 暂时强行改变scene =================================
     /*
+    auto aspect_ratio = 16.0 / 9.0;
+    int image_width = 400;
+
+    auto objects = make_shared<Group>();
+    auto earth_texture = make_shared<image_texture>("earthmap.jpg");
+    auto earth_surface = make_shared<lambertian>(earth_texture);
+    auto globe = make_shared<Sphere>(Vector3f(0,0,0), 2, earth_surface);
+
+    objects->add(globe);
+    */
+    /*
     float aspect_ratio = 1.0;
     int image_width = 600;
 
@@ -125,7 +136,18 @@ void RayTracer::render() {
     
 
     // 暂时强行改变camera ================================
-    
+    /*
+    Vector3f background = Vector3f(0.70, 0.80, 1.00);
+    Vector3f lookfrom = Vector3f(13,2,3);
+    Vector3f lookat = Vector3f(0,0,0);
+    auto vfov = 20.0;
+    auto aperture = 0.0;
+    Vector3f vup(0,1,0);
+    auto dist_to_focus = 10.0;
+    int image_height = static_cast<int>((float)image_width / aspect_ratio);
+    Camera *cam = new Camera(image_width, image_height, lookfrom, lookat, vup, vfov, aspect_ratio, aperture, dist_to_focus, 0.0, 1.0);
+    Image image(image_width, image_height);
+    */
     /*
     Vector3f background = Vector3f(0,0,0);
     Vector3f lookfrom = Vector3f(278, 278, -800);
@@ -138,7 +160,7 @@ void RayTracer::render() {
     Camera *cam = new Camera(image_width, image_height, lookfrom, lookat, vup, vfov, aspect_ratio, aperture, dist_to_focus, 0.0, 1.0);
     Image image(image_width, image_height);
     */
-   
+
     /*
     Vector3f background = Vector3f(0.70, 0.80, 1.00);
     Vector3f lookfrom = Vector3f(13,2,3);

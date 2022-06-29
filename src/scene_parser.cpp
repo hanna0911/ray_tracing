@@ -368,7 +368,10 @@ shared_ptr<texture> SceneParser::parseTexture(char* token) {
         } else if (!strcmp(token, "noise")) {
             
         } else if (!strcmp(token, "image")) {
-            
+            char filename[MAX_PARSER_TOKEN_LENGTH];
+            getToken(filename);
+            text = make_shared<image_texture>(filename);
+            return text;
         } else {
             printf("Unknown token in texture: '%s'\n", token);
             exit(0);
