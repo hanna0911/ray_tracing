@@ -27,6 +27,7 @@ class bvh_node : public Object3D {
             : bvh_node(list.objects, 0, list.objects.size(), time0, time1)
         {}
         */
+        bvh_node(shared_ptr<Group> list, double time0, double time1);
 
         bvh_node(
             const std::vector<shared_ptr<Object3D>>& src_objects,

@@ -124,11 +124,9 @@ TriangleMesh::TriangleMesh(const char *filename, shared_ptr<Material> material) 
         TriangleIndex& normalIndex = vnIndex[triId];
         shared_ptr<Triangle> triangle = make_shared<Triangle>(v[triIndex[0]], 
             v[triIndex[1]], v[triIndex[2]], material);
-        /*
         if (input_vn) triangle->setVN(vn[normalIndex[0]], 
             vn[normalIndex[1]], vn[normalIndex[2]]);
-        else */
-        triangle->normal = n[triId];
+        else triangle->normal = n[triId];
         // faces.push_back(triangle);
         sides->add(triangle);
     }

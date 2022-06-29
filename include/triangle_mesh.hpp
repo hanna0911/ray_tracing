@@ -32,12 +32,13 @@ public:
     std::vector<Vector3f> n; // compute normal (if none vn) 人工计算出法向量
     std::vector<Vector2f> vt; // vt: texture (unused)
 
-    bool intersect(const Ray &r, Hit &h, float tmin) override;
+    virtual bool intersect(const Ray &r, Hit &h, float tmin) override;
 
     // added functions
     virtual bool hit(const Ray& r, double t_min, double t_max, Hit& rec) const override;
     virtual bool bounding_box(double time0, double time1, aabb& output_box) const override;
-
+        
+    shared_ptr<Group> sides;
 
 private:
 
@@ -46,7 +47,7 @@ private:
     
     Vector3f box_minimum;
     Vector3f box_maximum;
-    shared_ptr<Group> sides;
+
 };
 
 #endif

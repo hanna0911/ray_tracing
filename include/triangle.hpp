@@ -19,6 +19,7 @@ public:
 		this->vertices[0] = a; this->vertices[1] = b; this->vertices[2] = c;
 		Vector3f P1P2 = b - a, P1P3 = c - a;
 		this->normal = Vector3f::cross(P1P2, P1P3);
+		useVN = false;
 	}
 
 	bool intersect( const Ray& ray,  Hit& hit , float tmin) override;
@@ -30,8 +31,16 @@ public:
     virtual bool hit(const Ray& r, double t_min, double t_max, Hit& rec) const override;
     virtual bool bounding_box(double time0, double time1, aabb& output_box) const override;
     
-protected:
+	void setVN(const Vector3f& an, const Vector3f& bn, const Vector3f& cn) {
+		useVN = true;
+		vn[0] = an; vn[1] = bn; vn[2] = cn;
+		// vn[0] = an.normalized(); vn[1] = bn.normalized(); vn[2] = cn.normalized();
+	}
 
+
+protected:
+	bool useVN;
+	Vector3f vn[3];
 };
 
 #endif //TRIANGLE_H

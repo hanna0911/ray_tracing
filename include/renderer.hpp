@@ -27,7 +27,7 @@ protected:
 
 class RayTracer : public Renderer {
 public:
-    RayTracer(char* _scene, char* _output, int _samples = 100, int _depth = 50) : Renderer(_scene, _output),
+    RayTracer(char* _scene, char* _output, int _samples = 100, int _depth = 30) : Renderer(_scene, _output),
         samples(_samples), depth(_depth) {}
     void render();
 protected:

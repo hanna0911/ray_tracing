@@ -14,6 +14,8 @@
 #include "triangle.hpp"
 #include "transform.hpp"
 #include "aabb.hpp"
+#include "bvh.hpp"
+#include "triangle_mesh.hpp"
 
 // ====================================================================
 // Ray Casting
@@ -81,8 +83,18 @@ void RayTracer::render() {
     Image image(image_width, image_height);
     
     Vector3f background = scene->getBackgroundColor();    
-    shared_ptr<Group> objects = scene->getGroup();
-    
+    shared_ptr<Group> temp_objects = scene->getGroup();
+    std::vector<shared_ptr<Object3D>> object_list;
+    for (const auto& object : temp_objects->objects) {
+        shared_ptr<TriangleMesh> ismesh = dynamic_pointer_cast<TriangleMesh>(object);
+        if(ismesh) { // 派生类是TriangleMesh
+            object_list.push_back(make_shared<bvh_node>(ismesh->sides, 0, 0)); // 把Triangle Mesh里所存的Group sides拿出来用bvh处理
+        } else { // 
+            object_list.push_back(object);
+        }
+    }
+    shared_ptr<Group> objects = make_shared<Group>(make_shared<bvh_node>(object_list, 0, object_list.size(), 0, 0));
+
     /*
     aabb newbox;
     objects->objects[6]->bounding_box(0, 0, newbox);

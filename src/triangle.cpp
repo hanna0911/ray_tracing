@@ -19,7 +19,7 @@ bool Triangle::hit(const Ray& ray, double tmin, double t_max, Hit& hit) const {
 	
 	if (t > 0 && 0 <= b && b <= 1 && 0 <= r && r <= 1 && b + r <= 1 && tmin < t && t < hit.getT()) {
 		Vector3f n = normal;
-		/*
+		
 		if (useVN) {
 			Vector3f point = ray.pointAtParameter(t);
 			Vector3f va = (vertices[0] - point), vb = (vertices[1] - point), vc = (vertices[2] - point);
@@ -28,7 +28,6 @@ bool Triangle::hit(const Ray& ray, double tmin, double t_max, Hit& hit) const {
 				rc = Vector3f::cross(va, vb).length();
 			n = (ra * vn[0] + rb * vn[1] + rc * vn[2]).normalized();
 		}
-		*/
 
 		hit.set(t, material, n); // 是否要判断normal的朝向？
 		return true;

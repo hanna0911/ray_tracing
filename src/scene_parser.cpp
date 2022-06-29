@@ -302,7 +302,7 @@ void SceneParser::parseMaterials() {
     }
     getToken(token);
     assert (!strcmp(token, "}"));
-    std::cout << "finished parse materials" << std::endl;
+    // std::cout << "finished parse materials" << std::endl;
 }
 
 shared_ptr<diffuse_light> SceneParser::parseDiffuseLight() {
@@ -361,7 +361,7 @@ shared_ptr<texture> SceneParser::parseTexture(char* token) {
                 }
             }
             text = make_shared<checker_texture>(even, odd);
-            std::cout << "parsed checker texture: " << even.x() << " " << even.y() << " " << even.z() << ", " << odd.x() << " " << odd.y() << " " << odd.z() << std::endl;
+            // std::cout << "parsed checker texture: " << even.x() << " " << even.y() << " " << even.z() << ", " << odd.x() << " " << odd.y() << " " << odd.z() << std::endl;
             return text;
         } else if (!strcmp(token, "solid")) {
             
@@ -415,7 +415,7 @@ shared_ptr<Material> SceneParser::parseMaterial() {
 shared_ptr<Object3D> SceneParser::parseObject(char token[MAX_PARSER_TOKEN_LENGTH]) {
 // Object3D *SceneParser::parseObject(char token[MAX_PARSER_TOKEN_LENGTH]) {
     // Object3D *answer = nullptr;
-    std::cout << ", token: " << token << std::endl;
+    // std::cout << ", token: " << token << std::endl;
     shared_ptr<Object3D> answer;
     if (!strcmp(token, "Group")) {
         // answer = (Object3D *) parseGroup();
@@ -431,7 +431,7 @@ shared_ptr<Object3D> SceneParser::parseObject(char token[MAX_PARSER_TOKEN_LENGTH
     } else if (!strcmp(token, "TriangleMesh")) {
         // answer = (Object3D *) parseTriangleMesh();
         answer = parseTriangleMesh();
-        std::cout << "finished parsing parseTriangleMesh" << std::endl;
+        // std::cout << "finished parsing parseTriangleMesh" << std::endl;
     } else if (!strcmp(token, "Transform")) {
         // answer = (Object3D *) parseTransform();
         answer = parseTransform();
@@ -443,12 +443,12 @@ shared_ptr<Object3D> SceneParser::parseObject(char token[MAX_PARSER_TOKEN_LENGTH
         answer = parseXYRect();
     } else if (!strcmp(token, "box")) {
         answer = parseBox();
-        std::cout << "finished parsing box" << std::endl;
+        // std::cout << "finished parsing box" << std::endl;
     } else {
         printf("Unknown token in parseObject: '%s'\n", token);
         exit(0);
     }
-    std::cout << "finish parsing objects" << std::endl;
+    // std::cout << "finish parsing objects" << std::endl;
     return answer;
 }
 
@@ -473,7 +473,7 @@ shared_ptr<Group> SceneParser::parseGroup() {
     getToken(token);
     assert (!strcmp(token, "numObjects"));
     int num_objects = readInt();
-    std::cout << "numobjects of group: " << num_objects << std::endl;
+    // std::cout << "numobjects of group: " << num_objects << std::endl;
 
     // auto *answer = new Group(num_objects);
     shared_ptr<Group> answer = make_shared<Group>(num_objects);
@@ -489,7 +489,7 @@ shared_ptr<Group> SceneParser::parseGroup() {
             current_material = getMaterial(index);
         } else {
             // Object3D *object = parseObject(token);
-            std::cout << "get object index: " << count;
+            // std::cout << "get object index: " << count;
             shared_ptr<Object3D> object = parseObject(token);
             assert (object != nullptr);
             // answer->addObject(count, object);
@@ -502,7 +502,7 @@ shared_ptr<Group> SceneParser::parseGroup() {
     assert (!strcmp(token, "}"));
 
     // return the group
-    std::cout << "finished parse group" << std::endl;
+    // std::cout << "finished parse group" << std::endl;
     return answer;
 }
 
@@ -581,10 +581,10 @@ shared_ptr<TriangleMesh> SceneParser::parseTriangleMesh() {
     const char *ext = &filename[strlen(filename) - 4];
     assert(!strcmp(ext, ".obj"));
     // Mesh *answer = new Mesh(filename, current_material);
-    std::cout << "create mesh obj" << std::endl;
+    // std::cout << "create mesh obj" << std::endl;
     // shared_ptr<Mesh> answer = make_shared<Mesh>(filename, current_material);
     shared_ptr<TriangleMesh> answer = make_shared<TriangleMesh>(filename, current_material);
-    std::cout << "finish create mesh obj" << std::endl;
+    // std::cout << "finish create mesh obj" << std::endl;
     return answer;
 }
 
@@ -599,18 +599,18 @@ shared_ptr<box> SceneParser::parseBox() {
             break;
         } else if (!strcmp(token, "min")) {
             min = readVector3f();
-            std::cout << "min: " << min.x() << " " << min.y() << " " << min.z() << std::endl;
+            // std::cout << "min: " << min.x() << " " << min.y() << " " << min.z() << std::endl;
         } else if (!strcmp(token, "max")) {
             max = readVector3f();
-            std::cout << "max: " << max.x() << " " << max.y() << " " << max.z() << std::endl;
+            // std::cout << "max: " << max.x() << " " << max.y() << " " << max.z() << std::endl;
         } else {
             printf("Unknown token in parseBox: '%s'\n", token);
             exit(0);
         }
     }
-    std::cout << "exit from here? " << std::endl;
+    // std::cout << "exit from here? " << std::endl;
     shared_ptr<box> answer = make_shared<box>(min, max, current_material);
-    std::cout << "created box answer" << std::endl;
+    // std::cout << "created box answer" << std::endl;
     return answer;
 }
 

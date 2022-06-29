@@ -3,6 +3,7 @@
 #include "aabb.hpp"
 #include "object3d.hpp"
 #include "hit.hpp" 
+#include "group.hpp"
 
 inline bool box_compare(const shared_ptr<Object3D> a, const shared_ptr<Object3D> b, int axis) {
     aabb box_a;
@@ -26,6 +27,9 @@ bool box_z_compare (const shared_ptr<Object3D> a, const shared_ptr<Object3D> b) 
     return box_compare(a, b, 2);
 }
 
+bvh_node::bvh_node(shared_ptr<Group> list, double time0, double time1)
+    : bvh_node(list->objects, 0, list->objects.size(), time0, time1)
+{}
 
 bvh_node::bvh_node(
     const std::vector<shared_ptr<Object3D>>& src_objects,
