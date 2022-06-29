@@ -1,4 +1,4 @@
-#include "mesh.hpp"
+#include "triangle_mesh.hpp"
 #include <fstream>
 #include <iostream>
 #include <algorithm>
@@ -9,8 +9,9 @@
 #include "bvh.hpp"
 #include "aabb.hpp"
 #include "utils.hpp"
+#include "group.hpp"
 
-bool Mesh::intersect(const Ray &r, Hit &h, float tmin) {
+bool TriangleMesh::intersect(const Ray &r, Hit &h, float tmin) {
 
     // Optional: Change this brute force method into a faster one.
     bool result = false;
@@ -25,7 +26,7 @@ bool Mesh::intersect(const Ray &r, Hit &h, float tmin) {
 }
 
 
-Mesh::Mesh(const char *filename, shared_ptr<Material> material) : Object3D(material) {
+TriangleMesh::TriangleMesh(const char *filename, shared_ptr<Material> material) : Object3D(material) {
 // Mesh::Mesh(const char *filename, Material *material) : Object3D(material) {
     std::cout << "constructing Mesh obj" << std::endl;
     // Optional: Use tiny obj loader to replace this simple one.
@@ -44,8 +45,8 @@ Mesh::Mesh(const char *filename, shared_ptr<Material> material) : Object3D(mater
     std::string tok;
     int texID; // ?? no use
     
-    box_minimum =  std::numeric_limits<float>::max();
-    box_maximum = std::numeric_limits<float>::min();
+    box_minimum = Vector3f(std::numeric_limits<float>::max());
+    box_maximum = Vector3f(std::numeric_limits<float>::min());
     bool input_vn = false; // 是否输入vn这一量
 
     while (true) {
@@ -111,10 +112,12 @@ Mesh::Mesh(const char *filename, shared_ptr<Material> material) : Object3D(mater
 
     f.close();
 
+    sides = make_shared<Group>(); // important!
+
     std::cout << "start construct aabb box for mesh obj" << std::endl;
 
     // aabb
-    box = make_shared<aabb>(box_minimum, box_minimum);   
+    // box = make_shared<aabb>(box_minimum, box_minimum);   
 
     for (int triId = 0; triId < (int) t.size(); ++triId) {
         TriangleIndex& triIndex = t[triId];
@@ -126,7 +129,8 @@ Mesh::Mesh(const char *filename, shared_ptr<Material> material) : Object3D(mater
             vn[normalIndex[1]], vn[normalIndex[2]]);
         else */
         triangle->normal = n[triId];
-        faces.push_back(triangle);
+        // faces.push_back(triangle);
+        sides->add(triangle);
     }
 
 
@@ -138,7 +142,7 @@ Mesh::Mesh(const char *filename, shared_ptr<Material> material) : Object3D(mater
 }
 
 
-void Mesh::computeNormal() {
+void TriangleMesh::computeNormal() {
     n.resize(t.size());
     for (int triId = 0; triId < (int) t.size(); ++triId) {
         TriangleIndex& triIndex = t[triId];
@@ -150,20 +154,11 @@ void Mesh::computeNormal() {
 }
 
 
-bool Mesh::hit(const Ray& r, double t_min, double t_max, Hit& rec) const {
-    bool result = false;
-    for (int triId = 0; triId < (int) t.size(); ++triId) {
-        TriangleIndex triIndex = t[triId];
-        shared_ptr<Triangle> triangle = make_shared<Triangle>(v[triIndex[0]],
-                          v[triIndex[1]], v[triIndex[2]], material);
-        triangle->normal = n[triId];
-        result |= triangle->hit(r, t_min, t_max, rec);
-    }
-    if(result) std::cout << "hit mesh" << std::endl;
-    return result;
+bool TriangleMesh::hit(const Ray& r, double t_min, double t_max, Hit& rec) const {
+    return sides->hit(r, t_min, t_max, rec);
 }
 
-bool Mesh::bounding_box(double time0, double time1, aabb& output_box) const {
-    output_box = *box;
+bool TriangleMesh::bounding_box(double time0, double time1, aabb& output_box) const {
+    output_box = aabb(box_minimum, box_maximum);
     return true;
 }

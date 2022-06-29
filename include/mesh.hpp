@@ -25,7 +25,8 @@ public:
 
     std::vector<Vector3f> v; // vertices
     std::vector<TriangleIndex> t, vnIndex; // vn
-    std::vector<Triangle *> faces; // store all triangle faces for further intersection
+    // std::vector<Triangle *> faces; // store all triangle faces for further intersection
+    std::vector<shared_ptr<Triangle>> faces;
     std::vector<Vector3f> vn; // input given normal 法向量
     std::vector<Vector3f> n; // compute normal (if none vn) 人工计算出法向量
     std::vector<Vector2f> vt; // vt: texture (unused)
@@ -43,7 +44,8 @@ private:
     void computeNormal();
     
     // BVH加速
-    aabb *box; // AABB包围盒
+    // aabb *box; // AABB包围盒
+    shared_ptr<aabb> box;
     Vector3f box_minimum, box_maximum;
     // bvh_node *bvhtree; // BVH树
 };

@@ -27,5 +27,6 @@ box::box(const Vector3f& p0, const Vector3f& p1, shared_ptr<Material> ptr) {
 }
 
 bool box::hit(const Ray& r, double t_min, double t_max, Hit& rec) const {
+    // std::cout << "enter hit box" << std::endl;
     return sides->hit(r, t_min, t_max, rec);
 }

@@ -8,8 +8,8 @@ Camera {
     focus_dist 10.0
     time0 0
     time1 0
-    width 1000
-    height 1000
+    width 300
+    height 300
 }
 
 Lights {
@@ -37,7 +37,7 @@ Background {
 }
 
 Group {
-    numObjects 8
+    numObjects 7
     MaterialIndex 2
     yz_rect 0 555 0 555 555
     MaterialIndex 0
@@ -48,13 +48,11 @@ Group {
     xz_rect 0 555 0 555 0
     xz_rect 0 555 0 555 555
     xy_rect 0 555 0 555 555
-    box {
-        min 130 0 65
-        max 295 165 230
-    }
-    box {
-        min 265 0 295
-        max 430 330 460
+    Transform {
+        Scale 1 1 1
+        TriangleMesh {
+            obj_file mesh/bunny_1k.obj
+        }
     }
 }
 

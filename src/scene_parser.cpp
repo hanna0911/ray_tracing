@@ -9,7 +9,7 @@
 #include "material.hpp"
 #include "object3d.hpp"
 #include "group.hpp"
-#include "mesh.hpp"
+#include "triangle_mesh.hpp"
 #include "sphere.hpp"
 #include "plane.hpp"
 #include "triangle.hpp"
@@ -431,6 +431,7 @@ shared_ptr<Object3D> SceneParser::parseObject(char token[MAX_PARSER_TOKEN_LENGTH
     } else if (!strcmp(token, "TriangleMesh")) {
         // answer = (Object3D *) parseTriangleMesh();
         answer = parseTriangleMesh();
+        std::cout << "finished parsing parseTriangleMesh" << std::endl;
     } else if (!strcmp(token, "Transform")) {
         // answer = (Object3D *) parseTransform();
         answer = parseTransform();
@@ -565,7 +566,7 @@ shared_ptr<Triangle> SceneParser::parseTriangle() {
     return make_shared<Triangle>(v0, v1, v2, current_material);
 }
 
-shared_ptr<Mesh> SceneParser::parseTriangleMesh() {
+shared_ptr<TriangleMesh> SceneParser::parseTriangleMesh() {
 // Mesh *SceneParser::parseTriangleMesh() {
     char token[MAX_PARSER_TOKEN_LENGTH];
     char filename[MAX_PARSER_TOKEN_LENGTH];
@@ -580,7 +581,10 @@ shared_ptr<Mesh> SceneParser::parseTriangleMesh() {
     const char *ext = &filename[strlen(filename) - 4];
     assert(!strcmp(ext, ".obj"));
     // Mesh *answer = new Mesh(filename, current_material);
-    shared_ptr<Mesh> answer = make_shared<Mesh>(filename, current_material);
+    std::cout << "create mesh obj" << std::endl;
+    // shared_ptr<Mesh> answer = make_shared<Mesh>(filename, current_material);
+    shared_ptr<TriangleMesh> answer = make_shared<TriangleMesh>(filename, current_material);
+    std::cout << "finish create mesh obj" << std::endl;
     return answer;
 }
 
@@ -639,6 +643,7 @@ shared_ptr<yz_rect> SceneParser::parseYZRect() {
     k = readFloat();
     return make_shared<yz_rect>(x0, x1, y0, y1, k, current_material);
 }
+
 
 shared_ptr<Transform> SceneParser::parseTransform() {
 // Transform *SceneParser::parseTransform() {
@@ -705,6 +710,7 @@ shared_ptr<Transform> SceneParser::parseTransform() {
     // return new Transform(matrix, object);
     return make_shared<Transform>(matrix, object);
 }
+
 
 // ====================================================================
 // ====================================================================

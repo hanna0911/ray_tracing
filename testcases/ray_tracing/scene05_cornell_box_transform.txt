@@ -8,8 +8,8 @@ Camera {
     focus_dist 10.0
     time0 0
     time1 0
-    width 1000
-    height 1000
+    width 300
+    height 300
 }
 
 Lights {
@@ -48,13 +48,21 @@ Group {
     xz_rect 0 555 0 555 0
     xz_rect 0 555 0 555 555
     xy_rect 0 555 0 555 555
-    box {
-        min 130 0 65
-        max 295 165 230
+    Transform {
+        YRotate 15
+		Translate  265 0 295
+        box {
+            min 0 0 0
+            max 165 330 165
+        }
     }
-    box {
-        min 265 0 295
-        max 430 330 460
+    Transform {
+        YRotate -18
+		Translate  130 0 65
+        box {
+            min 0 0 0
+            max 165 165 165
+        }
     }
 }
 

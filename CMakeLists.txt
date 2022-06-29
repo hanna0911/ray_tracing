@@ -10,7 +10,7 @@ ADD_SUBDIRECTORY(deps/vecmath)
 SET(PA1_SOURCES
         src/image.cpp
         src/main.cpp
-        src/mesh.cpp
+        src/triangle_mesh.cpp
         src/scene_parser.cpp
         src/renderer.cpp
         src/texture.cpp
@@ -33,7 +33,7 @@ SET(PA1_INCLUDES
         include/image.hpp
         include/light.hpp
         include/material.hpp
-        include/mesh.hpp
+        include/triangle_mesh.hpp
         include/object3d.hpp
         include/plane.hpp
         include/ray.hpp

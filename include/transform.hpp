@@ -1,6 +1,7 @@
 #ifndef TRANSFORM_H
 #define TRANSFORM_H
 
+
 #include <vecmath.h>
 #include "object3d.hpp"
 
@@ -24,24 +25,24 @@ public:
 
     Transform(const Matrix4f &m, shared_ptr<Object3D> obj) : o(obj) {
     // Transform(const Matrix4f &m, Object3D *obj) : o(obj) {
+        original = m;
         transform = m.inverse();
     }
 
     ~Transform() {
     }
 
-    virtual bool intersect(const Ray &r, Hit &h, float tmin);
+    virtual bool intersect(const Ray &r, Hit &h, float tmin) override;
 
     // added functions
-    bool hit(const Ray& r, double t_min, double t_max, Hit& rec) const;
-    bool bounding_box(double time0, double time1, aabb& output_box) const;
+    virtual bool hit(const Ray& r, double t_min, double t_max, Hit& rec) const override;
+    virtual bool bounding_box(double time0, double time1, aabb& output_box) const override;
 
 protected:
     // Object3D *o; //un-transformed object
     shared_ptr<Object3D> o;
-    Matrix4f transform;
+    Matrix4f transform, original;
 };
-
 
 
 #endif //TRANSFORM_H

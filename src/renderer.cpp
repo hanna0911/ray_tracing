@@ -11,6 +11,9 @@
 #include "hit.hpp"
 #include "box.hpp"
 #include "plane.hpp"
+#include "triangle.hpp"
+#include "transform.hpp"
+#include "aabb.hpp"
 
 // ====================================================================
 // Ray Casting
@@ -70,6 +73,7 @@ Vector3f RayCaster::traceRay(const Ray &camRay) {
 
 void RayTracer::render() {
 
+    // Parse Scene
     
     Camera *cam = scene->getCamera();
     int image_width = cam->getWidth();
@@ -79,8 +83,48 @@ void RayTracer::render() {
     Vector3f background = scene->getBackgroundColor();    
     shared_ptr<Group> objects = scene->getGroup();
     
+    /*
+    aabb newbox;
+    objects->objects[6]->bounding_box(0, 0, newbox);
+    Vector3f minimum = newbox.min(),
+             maximum = newbox.max();
+    std::cout << "min: " << minimum.x() << " " << minimum.y() << " " << minimum.z() << std::endl; 
+    std::cout << "max: " << maximum.x() << " " << maximum.y() << " " << maximum.z() << std::endl; 
+    */
 
     // 暂时强行改变scene =================================
+
+    // cornell box transformed
+    /*
+    float aspect_ratio = 1.0;
+    int image_width = 600;
+
+    auto objects = make_shared<Group>();
+
+    auto red   = make_shared<lambertian>(Vector3f(.65, .05, .05));
+    auto white = make_shared<lambertian>(Vector3f(.73, .73, .73));
+    auto green = make_shared<lambertian>(Vector3f(.12, .45, .15));
+    auto light = make_shared<diffuse_light>(Vector3f(15, 15, 15));
+
+    objects->add(make_shared<yz_rect>(0, 555, 0, 555, 555, green));
+    objects->add(make_shared<yz_rect>(0, 555, 0, 555, 0, red));
+    objects->add(make_shared<xz_rect>(213, 343, 227, 332, 554, light));
+    objects->add(make_shared<xz_rect>(0, 555, 0, 555, 0, white));
+    objects->add(make_shared<xz_rect>(0, 555, 0, 555, 555, white));
+    objects->add(make_shared<xy_rect>(0, 555, 0, 555, 555, white));
+
+    shared_ptr<Object3D> box1 = make_shared<box>(Vector3f(0,0,0), Vector3f(165,330,165), white);
+    box1 = make_shared<rotate_y>(box1, 15);
+    box1 = make_shared<translate>(box1, Vector3f(265,0,295));
+    objects->add(box1);
+
+    shared_ptr<Object3D> box2 = make_shared<box>(Vector3f(0,0,0), Vector3f(165,165,165), white);
+    box2 = make_shared<rotate_y>(box2, -18);
+    box2 = make_shared<translate>(box2, Vector3f(130,0,65));
+    objects->add(box2);
+    */
+
+    // earth
     /*
     auto aspect_ratio = 16.0 / 9.0;
     int image_width = 400;
@@ -92,6 +136,8 @@ void RayTracer::render() {
 
     objects->add(globe);
     */
+
+    // cornell box
     /*
     float aspect_ratio = 1.0;
     int image_width = 600;
@@ -121,12 +167,18 @@ void RayTracer::render() {
     objects->add(box2);
     */
 
+    // triangle mesh
     /*
     int image_width = 400;
     auto aspect_ratio = 16.0 / 9.0; 
 
-    // auto objects = make_shared<Group>();
-    Group objects;
+    auto objects = make_shared<Group>();
+    auto checker = make_shared<checker_texture>(Vector3f(0.2, 0.3, 0.1), Vector3f(0.9, 0.9, 0.9));
+    objects->add(make_shared<Triangle>(Vector3f(1.0, 0, 1.0), Vector3f(1.0, 1.0, 1.0), Vector3f(0, 1.0, 1.0), make_shared<lambertian>(checker)));
+    */
+
+    // two spheres
+    /*
     auto checker = make_shared<checker_texture>(Vector3f(0.2, 0.3, 0.1), Vector3f(0.9, 0.9, 0.9));
 
     objects.add(make_shared<Sphere>(Vector3f(0,-10, 0), 10, make_shared<lambertian>(checker)));
@@ -148,6 +200,8 @@ void RayTracer::render() {
     Camera *cam = new Camera(image_width, image_height, lookfrom, lookat, vup, vfov, aspect_ratio, aperture, dist_to_focus, 0.0, 1.0);
     Image image(image_width, image_height);
     */
+    
+    // Cornel box
     /*
     Vector3f background = Vector3f(0,0,0);
     Vector3f lookfrom = Vector3f(278, 278, -800);
@@ -173,6 +227,7 @@ void RayTracer::render() {
     Camera *cam = new Camera(image_width, image_height, lookfrom, lookat, vup, vfov, aspect_ratio, aperture, dist_to_focus, 0.0, 1.0);
     Image image(image_width, image_height);
     */
+
     // =================================================
 
     // Anti-aliasing

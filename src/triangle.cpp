@@ -4,6 +4,7 @@
 #include "aabb.hpp"
 
 bool Triangle::hit(const Ray& ray, double tmin, double t_max, Hit& hit) const {
+	// std::cout << "hit triangle" << std::endl;
 	Vector3f P0 = vertices[0], P1 = vertices[1], P2 = vertices[2]; // 三角形顶点
 	Vector3f R0 = ray.getOrigin(); // 光线起始点
 	Vector3f Rd = ray.getDirection(); Rd.normalize(); // 光线单位方向向量
