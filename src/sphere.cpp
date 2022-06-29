@@ -74,3 +74,46 @@ bool Sphere::bounding_box(double time0, double time1, aabb& output_box) const {
     return true;
 }
 
+
+
+Vector3f MovingSphere::center(double time) const {
+    return center0 + ((time - time0) / (time1 - time0))*(center1 - center0);
+}
+
+bool MovingSphere::hit(const Ray& r, double t_min, double t_max, Hit& rec) const {
+    Vector3f oc = r.getOrigin() - center(r.time());
+    auto a = r.getDirection().squaredLength();
+    auto half_b = Vector3f::dot(oc, r.getDirection());
+    auto c = oc.squaredLength() - radius*radius;
+
+    auto discriminant = half_b*half_b - a*c;
+    if (discriminant < 0) return false;
+    auto sqrtd = sqrt(discriminant);
+
+    // Find the nearest root that lies in the acceptable range.
+    auto root = (-half_b - sqrtd) / a;
+    if (root < t_min || t_max < root) {
+        root = (-half_b + sqrtd) / a;
+        if (root < t_min || t_max < root)
+            return false;
+    }
+
+    rec.t = root;
+    rec.p = r.pointAtParameter(rec.t);
+    auto outward_normal = (rec.p - center(r.time())) / radius;
+    rec.set_face_normal(r, outward_normal);
+    rec.material = material;
+
+    return true;
+}
+
+bool MovingSphere::bounding_box(double _time0, double _time1, aabb& output_box) const {
+    aabb box0(
+        center(_time0) - Vector3f(radius, radius, radius),
+        center(_time0) + Vector3f(radius, radius, radius));
+    aabb box1(
+        center(_time1) - Vector3f(radius, radius, radius),
+        center(_time1) + Vector3f(radius, radius, radius));
+    output_box = box0.surrounding_box(box0, box1);
+    return true;
+}

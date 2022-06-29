@@ -23,6 +23,9 @@ class xz_rect;
 class xy_rect;
 class box;
 class diffuse_light;
+class MovingSphere;
+class isotropic;
+class constant_medium;
 
 #define MAX_PARSER_TOKEN_LENGTH 1024
 
@@ -58,7 +61,7 @@ public:
 
     shared_ptr<Material> getMaterial(int i) const {
     // Material *getMaterial(int i) const {
-        std::cout << "get material index: " << i << std::endl;
+        // std::cout << "get material index: " << i << std::endl;
         assert(i >= 0 && i < num_materials);
         return materials[i];
     }
@@ -83,13 +86,16 @@ private:
     // Material *parseMaterial();
     shared_ptr<Material> parseMaterial();
     shared_ptr<lambertian> parseLambertian();
+    shared_ptr<isotropic> parseIsotropic();
     shared_ptr<diffuse_light> parseDiffuseLight();
     shared_ptr<texture> parseTexture(char*);
 
     // Object3D *parseObject(char token[MAX_PARSER_TOKEN_LENGTH]);
     shared_ptr<Object3D> parseObject(char token[MAX_PARSER_TOKEN_LENGTH]);
     shared_ptr<Group> parseGroup(); // Group *parseGroup();
+    shared_ptr<constant_medium> parseConstantMedium();
     shared_ptr<Sphere> parseSphere(); // Sphere *parseSphere();
+    shared_ptr<MovingSphere> parseMovingSphere();
     // Plane *parsePlane();
     shared_ptr<Triangle> parseTriangle(); // Triangle *parseTriangle();
     shared_ptr<TriangleMesh> parseTriangleMesh(); // Mesh *parseTriangleMeshs();

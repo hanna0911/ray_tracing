@@ -4,7 +4,7 @@
 #include "external/stb_image.h"
 
 Vector3f noise_texture::value(double u, double v, const Vector3f& p) const {
-    return Vector3f(1,1,1) * 0.5 * (1 + sin(scale*p.z() + 10 * (*noise).turb(p)));
+    return Vector3f(1,1,1) * 0.5 * (1 + sin(scale*p.z() + 10 * noise.turb(p)));
 }
 
 image_texture::image_texture(const char* filename) {

@@ -16,6 +16,7 @@
 #include "transform.hpp"
 #include "texture.hpp"
 #include "box.hpp"
+#include "constant_medium.hpp"
 
 #define DegreesToRadians(x) ((M_PI * x) / 180.0f)
 
@@ -49,9 +50,9 @@ SceneParser::SceneParser(const char *filename) {
     fclose(file);
     file = nullptr;
 
-    if (num_lights == 0) {
-        printf("WARNING:    No lights specified\n");
-    }
+    // if (num_lights == 0) {
+    //     printf("WARNING:    No lights specified\n");
+    // }
 }
 
 SceneParser::~SceneParser() {
@@ -294,6 +295,27 @@ void SceneParser::parseMaterials() {
             materials[count] = parseLambertian();
         } else if (!strcmp(token, "diffuse_light")) {
             materials[count] = parseDiffuseLight();
+        } else if (!strcmp(token, "dielectric")) {
+            float refraction = readFloat();
+            materials[count] = make_shared<dielectric>(refraction);
+        } else if (!strcmp(token, "metal")) {
+            Vector3f albedo;
+            float fuzz;
+            getToken(token);
+            assert (!strcmp(token, "{"));
+            while (true) {
+                getToken(token);
+                if (!strcmp(token, "}")) break;
+                else if (!strcmp(token, "albedo")) albedo = readVector3f();
+                else if (!strcmp(token, "fuzz")) fuzz = readFloat();
+                else {
+                    printf("Unknown token in parseMetal: '%s'\n", token);
+                    exit(0);
+                }
+            }
+            materials[count] = make_shared<metal>(albedo, fuzz);
+        } else if (!strcmp(token, "isotropic")) {
+            materials[count] = parseIsotropic();
         } else {
             printf("Unknown token in parseMaterial: '%s'\n", token);
             exit(0);
@@ -321,6 +343,25 @@ shared_ptr<diffuse_light> SceneParser::parseDiffuseLight() {
     assert (!strcmp(token, "}"));
     return make_shared<diffuse_light>(text);
 }
+
+
+shared_ptr<isotropic> SceneParser::parseIsotropic() {
+    char token[MAX_PARSER_TOKEN_LENGTH];
+    getToken(token);
+    assert (!strcmp(token, "{"));
+    getToken(token); // texture token
+    if (!strcmp(token, "customize")) {
+        Vector3f custom = readVector3f();
+        getToken(token);
+        assert (!strcmp(token, "}"));
+        return make_shared<isotropic>(custom);
+    }
+    shared_ptr<texture> text = parseTexture(token);
+    getToken(token);
+    assert (!strcmp(token, "}"));
+    return make_shared<isotropic>(text);
+}
+
 
 shared_ptr<lambertian> SceneParser::parseLambertian() {
     char token[MAX_PARSER_TOKEN_LENGTH];
@@ -363,10 +404,14 @@ shared_ptr<texture> SceneParser::parseTexture(char* token) {
             text = make_shared<checker_texture>(even, odd);
             // std::cout << "parsed checker texture: " << even.x() << " " << even.y() << " " << even.z() << ", " << odd.x() << " " << odd.y() << " " << odd.z() << std::endl;
             return text;
-        } else if (!strcmp(token, "solid")) {
-            
+        } else if (!strcmp(token, "solid")) { // never enter (customize)
+            Vector3f solid = readVector3f();
+            text = make_shared<solid_color>(solid);
+            return text;
         } else if (!strcmp(token, "noise")) {
-            
+            float noise = readFloat();
+            text = make_shared<noise_texture>(noise);
+            return text;
         } else if (!strcmp(token, "image")) {
             char filename[MAX_PARSER_TOKEN_LENGTH];
             getToken(filename);
@@ -423,6 +468,9 @@ shared_ptr<Object3D> SceneParser::parseObject(char token[MAX_PARSER_TOKEN_LENGTH
     } else if (!strcmp(token, "Sphere")) {
         // answer = (Object3D *) parseSphere();
        answer = parseSphere();
+    } else if (!strcmp(token, "MovingSphere")) {
+        // answer = (Object3D *) parseSphere();
+       answer = parseMovingSphere();
     } /*else if (!strcmp(token, "Plane")) {
         answer = (Object3D *) parsePlane();
     } */else if (!strcmp(token, "Triangle")) {
@@ -444,12 +492,44 @@ shared_ptr<Object3D> SceneParser::parseObject(char token[MAX_PARSER_TOKEN_LENGTH
     } else if (!strcmp(token, "box")) {
         answer = parseBox();
         // std::cout << "finished parsing box" << std::endl;
+    } else if (!strcmp(token, "constant_medium")) {
+        answer = parseConstantMedium();
     } else {
         printf("Unknown token in parseObject: '%s'\n", token);
         exit(0);
     }
     // std::cout << "finish parsing objects" << std::endl;
     return answer;
+}
+
+// ====================================================================
+// ====================================================================
+
+shared_ptr<constant_medium> SceneParser::parseConstantMedium() {
+    char token[MAX_PARSER_TOKEN_LENGTH];
+    getToken(token);
+    assert (!strcmp(token, "{"));
+    shared_ptr<constant_medium> CM;
+    shared_ptr<Material> CM_material = make_shared<Material>(*current_material); // mark
+    float density;
+    while (true) {
+        getToken(token);
+        if (!strcmp(token, "}")) break;
+        else if (!strcmp(token, "MaterialIndex")) {
+            // change the current material
+            int index = readInt();
+            assert (index >= 0 && index <= getNumMaterials());
+            current_material = getMaterial(index);
+        } else if (!strcmp(token, "density")) {
+            density = readFloat();
+        } else {
+            shared_ptr<Object3D> object = parseObject(token);
+            assert (object != nullptr);
+            CM = make_shared<constant_medium>(object, density, CM_material);
+        }
+    }
+    current_material = make_shared<Material>(*CM_material); // restore
+    return CM;
 }
 
 // ====================================================================
@@ -506,8 +586,35 @@ shared_ptr<Group> SceneParser::parseGroup() {
     return answer;
 }
 
-// ====================================================================
-// ====================================================================
+
+shared_ptr<MovingSphere> SceneParser::parseMovingSphere() {
+    char token[MAX_PARSER_TOKEN_LENGTH];
+    getToken(token);
+    assert (!strcmp(token, "{"));
+    Vector3f center0, center1;
+    float time0, time1, radius;
+    while(true) {
+        getToken(token);
+        if (!strcmp(token, "}")) break;
+        else if (!strcmp(token, "center0")) {
+            center0 = readVector3f();
+        } else if (!strcmp(token, "center1")) {
+            center1 = readVector3f();
+        } else if (!strcmp(token, "time0")) {
+            time0 = readFloat();
+        } else if (!strcmp(token, "time1")) {
+            time1 = readFloat();
+        } else if (!strcmp(token, "radius")) {
+            radius = readFloat();
+        } else {
+             printf("Unknown token in parseObject: '%s'\n", token);
+            exit(0);
+        }
+    }
+    assert (current_material != nullptr);
+    // return new Sphere(center, radius, current_material);
+    return make_shared<MovingSphere>(center0, center1, time0, time1, radius, current_material);
+}
 
 shared_ptr<Sphere> SceneParser::parseSphere() {
 // Sphere *SceneParser::parseSphere() {

@@ -3,7 +3,7 @@
 
 #include "utils.hpp"
 #include "object3d.hpp"
-// #include "group.hpp"
+#include "group.hpp"
 #include <algorithm>
 // #include "aabb.hpp"
 
@@ -22,11 +22,11 @@ class bvh_node : public Object3D {
     public:
         bvh_node();
 
-        /*
+        
         bvh_node(const Group& list, double time0, double time1)
             : bvh_node(list.objects, 0, list.objects.size(), time0, time1)
         {}
-        */
+        
         bvh_node(shared_ptr<Group> list, double time0, double time1);
 
         bvh_node(

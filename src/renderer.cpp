@@ -16,6 +16,7 @@
 #include "aabb.hpp"
 #include "bvh.hpp"
 #include "triangle_mesh.hpp"
+#include "constant_medium.hpp"
 
 // ====================================================================
 // Ray Casting
@@ -73,9 +74,123 @@ Vector3f RayCaster::traceRay(const Ray &camRay) {
 // ====================================================================
 
 
+shared_ptr<Group> final_scene() {
+    shared_ptr<Group> boxes1 = make_shared<Group>();
+    auto ground = make_shared<lambertian>(Vector3f(0.48, 0.83, 0.53));
+
+    // const int boxes_per_side = 20;
+    const int boxes_per_side = 5;
+    for (int i = 0; i < boxes_per_side; i++) {
+        for (int j = 0; j < boxes_per_side; j++) {
+            auto w = 100.0;
+            auto x0 = -1000.0 + i*w;
+            auto z0 = -1000.0 + j*w;
+            auto y0 = 0.0;
+            auto x1 = x0 + w;
+            auto y1 = random_double(1,101);
+            auto z1 = z0 + w;
+
+            boxes1->add(make_shared<box>(Vector3f(x0,y0,z0), Vector3f(x1,y1,z1), ground));
+        }
+    }
+
+    shared_ptr<Group> objects = make_shared<Group>();
+
+    objects->add(make_shared<bvh_node>(boxes1, 0, 1));
+
+    auto light = make_shared<diffuse_light>(Vector3f(7, 7, 7));
+    objects->add(make_shared<xz_rect>(123, 423, 147, 412, 554, light));
+
+    
+    auto center1 = Vector3f(400, 400, 200);
+    auto center2 = center1 + Vector3f(30,0,0);
+    auto MovingSphere_material = make_shared<lambertian>(Vector3f(0.7, 0.3, 0.1));
+    objects->add(make_shared<MovingSphere>(center1, center2, 0, 1, 50, MovingSphere_material));
+
+    objects->add(make_shared<Sphere>(Vector3f(260, 150, 45), 50, make_shared<dielectric>(1.5)));
+    objects->add(make_shared<Sphere>(
+        Vector3f(0, 150, 145), 50, make_shared<metal>(Vector3f(0.8, 0.8, 0.9), 1.0)
+    ));
+    
+    auto boundary = make_shared<Sphere>(Vector3f(360,150,145), 70, make_shared<dielectric>(1.5));
+    objects->add(boundary);
+    objects->add(make_shared<constant_medium>(boundary, 0.2, Vector3f(0.2, 0.4, 0.9)));
+    boundary = make_shared<Sphere>(Vector3f(0, 0, 0), 5000, make_shared<dielectric>(1.5));
+    objects->add(make_shared<constant_medium>(boundary, .0001, Vector3f(1,1,1)));
+    
+    auto emat = make_shared<lambertian>(make_shared<image_texture>("earthmap.jpg"));
+    objects->add(make_shared<Sphere>(Vector3f(400,200,400), 100, emat));
+    
+    auto pertext = make_shared<noise_texture>(0.1);
+    
+    objects->add(make_shared<Sphere>(Vector3f(220,280,300), 80, make_shared<lambertian>(pertext)));
+    
+    shared_ptr<Group> boxes2 = make_shared<Group>();
+    auto white = make_shared<lambertian>(Vector3f(.73, .73, .73));
+    // int ns = 1000;
+    int ns = 30;
+    for (int j = 0; j < ns; j++) {
+        boxes2->add(make_shared<Sphere>(Vector3f::random(0,165), 10, white));
+    }
+
+
+    objects->add(make_shared<bvh_node>(boxes2, 0.0, 1.0));
+    
+    return objects;
+}
+
+shared_ptr<Group> cornell_smoke() {
+    shared_ptr<Group> objects = make_shared<Group>();
+
+    auto red   = make_shared<lambertian>(Vector3f(.65, .05, .05));
+    auto white = make_shared<lambertian>(Vector3f(.73, .73, .73));
+    auto green = make_shared<lambertian>(Vector3f(.12, .45, .15));
+    auto light = make_shared<diffuse_light>(Vector3f(7, 7, 7));
+
+    objects->add(make_shared<yz_rect>(0, 555, 0, 555, 555, green));
+    objects->add(make_shared<yz_rect>(0, 555, 0, 555, 0, red));
+    objects->add(make_shared<xz_rect>(113, 443, 127, 432, 554, light));
+    objects->add(make_shared<xz_rect>(0, 555, 0, 555, 555, white));
+    objects->add(make_shared<xz_rect>(0, 555, 0, 555, 0, white));
+    objects->add(make_shared<xy_rect>(0, 555, 0, 555, 555, white));
+
+    shared_ptr<Object3D> box1 = make_shared<box>(Vector3f(265,0,295), Vector3f(430,330,460), white);
+
+    shared_ptr<Object3D> box2 = make_shared<box>(Vector3f(130,0,65), Vector3f(295,165,230), white);
+
+    objects->add(make_shared<constant_medium>(box1, 0.01, Vector3f(0,0,0)));
+    objects->add(make_shared<constant_medium>(box2, 0.01, Vector3f(1,1,1)));
+
+    return objects;
+
+}
+
 void RayTracer::render() {
 
     // Parse Scene
+    /*
+    int image_width = 100;
+    int image_height = 100;
+    Image image(image_width, image_height);
+
+    Vector3f background(0, 0, 0);
+
+    Vector3f lookfrom(478, 278, -600);
+    // Vector3f lookfrom(278, 278, -800);
+    Vector3f lookat(278, 278, 0);
+    auto vfov = 40.0;
+    auto aperture = 0.0;
+    Vector3f vup(0, 1, 0);
+    auto focus_dist = 10.0;
+    auto time0 = 0;
+    auto time1 = 0;
+    auto aspect_ratio = 1.0;
+
+    Camera *cam = new Camera(image_width, image_height, lookfrom, lookat, vup, vfov, aspect_ratio, aperture, focus_dist, 0.0, 1.0);
+    // shared_ptr<Group> objects = cornell_smoke();
+    shared_ptr<Group> objects = final_scene();
+    */
+
     
     Camera *cam = scene->getCamera();
     int image_width = cam->getWidth();
@@ -94,6 +209,7 @@ void RayTracer::render() {
         }
     }
     shared_ptr<Group> objects = make_shared<Group>(make_shared<bvh_node>(object_list, 0, object_list.size(), 0, 0));
+    
 
     /*
     aabb newbox;
@@ -170,12 +286,12 @@ void RayTracer::render() {
 
     shared_ptr<Object3D> box1 = make_shared<box>(Vector3f(130, 0, 65), Vector3f(295, 165, 230), white);
     // box1 = make_shared<rotate_y>(box1, 15);
-    // box1 = make_shared<translate>(box1, vec3(265,0,295));
+    // box1 = make_shared<translate>(box1, Vector3f(265,0,295));
     objects->add(box1);
 
     shared_ptr<Object3D> box2 = make_shared<box>(Vector3f(265, 0, 295), Vector3f(430, 330, 460), white);
     // box2 = make_shared<rotate_y>(box2, -18);
-    // box2 = make_shared<translate>(box2, vec3(130,0,65));
+    // box2 = make_shared<translate>(box2, Vector3f(130,0,65));
     objects->add(box2);
     */
 

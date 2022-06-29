@@ -4,6 +4,7 @@
 // #include "stb_image.hpp"
 #include <iostream>
 #include "utils.hpp"
+#include "perlin.hpp"
 
 class perlin; 
 
@@ -55,7 +56,7 @@ class noise_texture : public texture {
         virtual Vector3f value(double u, double v, const Vector3f& p) const override;
 
     public:
-        perlin *noise;
+        perlin noise;
         double scale;
 };
 

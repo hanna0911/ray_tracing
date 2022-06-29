@@ -24,7 +24,8 @@ SET(PA1_SOURCES
         src/transform.cpp
         src/bvh.cpp
         src/plane.cpp
-        src/box.cpp)
+        src/box.cpp
+        src/constant_medium.cpp)
 
 SET(PA1_INCLUDES
         include/camera.hpp
@@ -49,6 +50,7 @@ SET(PA1_INCLUDES
         include/bvh.hpp
         include/stb_image.hpp
         include/box.hpp
+        include/constant_medium.hpp
         )
 
 SET(CMAKE_CXX_COMPILER "/opt/homebrew/bin/g++-11")

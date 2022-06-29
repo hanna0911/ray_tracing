@@ -52,4 +52,31 @@ private:
 };
 
 
+
+class MovingSphere : public Object3D {
+    public:
+        MovingSphere() {}
+        MovingSphere(
+            Vector3f cen0, Vector3f cen1, double _time0, double _time1, double r, shared_ptr<Material> m)
+            : center0(cen0), center1(cen1), time0(_time0), time1(_time1), radius(r), material(m)
+        {};
+
+        virtual bool intersect(const Ray &r, Hit &h, float tmin) override { return false; }
+
+        virtual bool hit(
+            const Ray& r, double t_min, double t_max, Hit& rec) const override;
+
+        virtual bool bounding_box(
+            double _time0, double _time1, aabb& output_box) const override;
+
+        Vector3f center(double time) const;
+
+    public:
+        Vector3f center0, center1;
+        double time0, time1;
+        double radius;
+        shared_ptr<Material> material;
+};
+
+
 #endif

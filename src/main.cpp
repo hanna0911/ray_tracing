@@ -34,7 +34,7 @@ int main(int argc, char *argv[]) {
     // ray_caster.render();
 
     // RayTracing
-    RayTracer ray_tracer(inputFile, outputFile);
+    RayTracer ray_tracer(inputFile, outputFile, atoi(argv[3]), atoi(argv[4]));
     ray_tracer.render();
 
     cout << "\nHello! Computer Graphics!" << endl;

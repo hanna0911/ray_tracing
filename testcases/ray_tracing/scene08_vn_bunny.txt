@@ -8,8 +8,8 @@ Camera {
     focus_dist 10.0
     time0 0
     time1 0
-    width 200
-    height 200
+    width 100
+    height 100
 }
 
 Lights {
@@ -49,9 +49,9 @@ Group {
     MaterialIndex 0
     Transform {
         Translate 278 50 0
-        UniformScale 900.0
+        UniformScale 850.0
         TriangleMesh {
-            obj_file mesh/bunny_1k.obj
+            obj_file mesh/bunny_1k_vn.obj
         }
     }
 }

@@ -1,0 +1,1519 @@
+
+Camera {
+    lookfrom 478 278 -600
+    lookat 278 278 0
+    vfov 40.0
+    aperture 0.0
+    vup 0 1 0
+    focus_dist 10.0
+    time0 0.0
+    time1 1.0
+    width 100
+    height 100
+}
+
+Lights {
+    numLights 0
+}
+
+Materials {
+    numMaterials 10
+    lambertian {
+        customize 0.48 0.83 0.53
+    }
+    diffuse_light {
+        customize 7 7 7
+    }
+    lambertian {
+        customize 0.7 0.3 0.1
+    }
+    dielectric 1.5
+    metal { 
+        albedo 0.8 0.8 0.9
+        fuzz 1.0
+    }
+    isotropic {
+        customize 0.2 0.4 0.9
+    }
+    isotropic {
+        customize 1 1 1
+    }
+    lambertian {
+        image earthmap.jpg
+    }
+    lambertian {
+        noise 0.1
+    }
+    lambertian { 
+        customize 0.73 0.73 0.73
+    } 
+}
+
+Background {
+    color 0 0 0
+}
+
+Group {
+    numObjects 1408
+
+    MaterialIndex 0
+        box { min -1000.0 0.0 -1000.0 max -900.0 95 -900.0 }
+        box { min -1000.0 0.0 -900.0 max -900.0 27 -800.0 }
+        box { min -1000.0 0.0 -800.0 max -900.0 28 -700.0 }
+        box { min -1000.0 0.0 -700.0 max -900.0 71 -600.0 }
+        box { min -1000.0 0.0 -600.0 max -900.0 41 -500.0 }
+        box { min -1000.0 0.0 -500.0 max -900.0 61 -400.0 }
+        box { min -1000.0 0.0 -400.0 max -900.0 88 -300.0 }
+        box { min -1000.0 0.0 -300.0 max -900.0 25 -200.0 }
+        box { min -1000.0 0.0 -200.0 max -900.0 44 -100.0 }
+        box { min -1000.0 0.0 -100.0 max -900.0 64 0.0 }
+        box { min -1000.0 0.0 0.0 max -900.0 72 100.0 }
+        box { min -1000.0 0.0 100.0 max -900.0 27 200.0 }
+        box { min -1000.0 0.0 200.0 max -900.0 16 300.0 }
+        box { min -1000.0 0.0 300.0 max -900.0 34 400.0 }
+        box { min -1000.0 0.0 400.0 max -900.0 87 500.0 }
+        box { min -1000.0 0.0 500.0 max -900.0 87 600.0 }
+        box { min -1000.0 0.0 600.0 max -900.0 74 700.0 }
+        box { min -1000.0 0.0 700.0 max -900.0 65 800.0 }
+        box { min -1000.0 0.0 800.0 max -900.0 16 900.0 }
+        box { min -1000.0 0.0 900.0 max -900.0 38 1000.0 }
+        box { min -900.0 0.0 -1000.0 max -800.0 59 -900.0 }
+        box { min -900.0 0.0 -900.0 max -800.0 64 -800.0 }
+        box { min -900.0 0.0 -800.0 max -800.0 58 -700.0 }
+        box { min -900.0 0.0 -700.0 max -800.0 9 -600.0 }
+        box { min -900.0 0.0 -600.0 max -800.0 70 -500.0 }
+        box { min -900.0 0.0 -500.0 max -800.0 43 -400.0 }
+        box { min -900.0 0.0 -400.0 max -800.0 73 -300.0 }
+        box { min -900.0 0.0 -300.0 max -800.0 55 -200.0 }
+        box { min -900.0 0.0 -200.0 max -800.0 48 -100.0 }
+        box { min -900.0 0.0 -100.0 max -800.0 30 0.0 }
+        box { min -900.0 0.0 0.0 max -800.0 10 100.0 }
+        box { min -900.0 0.0 100.0 max -800.0 42 200.0 }
+        box { min -900.0 0.0 200.0 max -800.0 19 300.0 }
+        box { min -900.0 0.0 300.0 max -800.0 66 400.0 }
+        box { min -900.0 0.0 400.0 max -800.0 41 500.0 }
+        box { min -900.0 0.0 500.0 max -800.0 29 600.0 }
+        box { min -900.0 0.0 600.0 max -800.0 31 700.0 }
+        box { min -900.0 0.0 700.0 max -800.0 16 800.0 }
+        box { min -900.0 0.0 800.0 max -800.0 2 900.0 }
+        box { min -900.0 0.0 900.0 max -800.0 60 1000.0 }
+        box { min -800.0 0.0 -1000.0 max -700.0 21 -900.0 }
+        box { min -800.0 0.0 -900.0 max -700.0 59 -800.0 }
+        box { min -800.0 0.0 -800.0 max -700.0 44 -700.0 }
+        box { min -800.0 0.0 -700.0 max -700.0 95 -600.0 }
+        box { min -800.0 0.0 -600.0 max -700.0 71 -500.0 }
+        box { min -800.0 0.0 -500.0 max -700.0 57 -400.0 }
+        box { min -800.0 0.0 -400.0 max -700.0 62 -300.0 }
+        box { min -800.0 0.0 -300.0 max -700.0 85 -200.0 }
+        box { min -800.0 0.0 -200.0 max -700.0 77 -100.0 }
+        box { min -800.0 0.0 -100.0 max -700.0 40 0.0 }
+        box { min -800.0 0.0 0.0 max -700.0 36 100.0 }
+        box { min -800.0 0.0 100.0 max -700.0 91 200.0 }
+        box { min -800.0 0.0 200.0 max -700.0 22 300.0 }
+        box { min -800.0 0.0 300.0 max -700.0 62 400.0 }
+        box { min -800.0 0.0 400.0 max -700.0 81 500.0 }
+        box { min -800.0 0.0 500.0 max -700.0 65 600.0 }
+        box { min -800.0 0.0 600.0 max -700.0 96 700.0 }
+        box { min -800.0 0.0 700.0 max -700.0 1 800.0 }
+        box { min -800.0 0.0 800.0 max -700.0 75 900.0 }
+        box { min -800.0 0.0 900.0 max -700.0 60 1000.0 }
+        box { min -700.0 0.0 -1000.0 max -600.0 70 -900.0 }
+        box { min -700.0 0.0 -900.0 max -600.0 15 -800.0 }
+        box { min -700.0 0.0 -800.0 max -600.0 38 -700.0 }
+        box { min -700.0 0.0 -700.0 max -600.0 63 -600.0 }
+        box { min -700.0 0.0 -600.0 max -600.0 98 -500.0 }
+        box { min -700.0 0.0 -500.0 max -600.0 41 -400.0 }
+        box { min -700.0 0.0 -400.0 max -600.0 83 -300.0 }
+        box { min -700.0 0.0 -300.0 max -600.0 50 -200.0 }
+        box { min -700.0 0.0 -200.0 max -600.0 4 -100.0 }
+        box { min -700.0 0.0 -100.0 max -600.0 58 0.0 }
+        box { min -700.0 0.0 0.0 max -600.0 98 100.0 }
+        box { min -700.0 0.0 100.0 max -600.0 73 200.0 }
+        box { min -700.0 0.0 200.0 max -600.0 28 300.0 }
+        box { min -700.0 0.0 300.0 max -600.0 39 400.0 }
+        box { min -700.0 0.0 400.0 max -600.0 87 500.0 }
+        box { min -700.0 0.0 500.0 max -600.0 73 600.0 }
+        box { min -700.0 0.0 600.0 max -600.0 29 700.0 }
+        box { min -700.0 0.0 700.0 max -600.0 4 800.0 }
+        box { min -700.0 0.0 800.0 max -600.0 89 900.0 }
+        box { min -700.0 0.0 900.0 max -600.0 39 1000.0 }
+        box { min -600.0 0.0 -1000.0 max -500.0 54 -900.0 }
+        box { min -600.0 0.0 -900.0 max -500.0 56 -800.0 }
+        box { min -600.0 0.0 -800.0 max -500.0 42 -700.0 }
+        box { min -600.0 0.0 -700.0 max -500.0 22 -600.0 }
+        box { min -600.0 0.0 -600.0 max -500.0 60 -500.0 }
+        box { min -600.0 0.0 -500.0 max -500.0 61 -400.0 }
+        box { min -600.0 0.0 -400.0 max -500.0 81 -300.0 }
+        box { min -600.0 0.0 -300.0 max -500.0 75 -200.0 }
+        box { min -600.0 0.0 -200.0 max -500.0 39 -100.0 }
+        box { min -600.0 0.0 -100.0 max -500.0 75 0.0 }
+        box { min -600.0 0.0 0.0 max -500.0 79 100.0 }
+        box { min -600.0 0.0 100.0 max -500.0 1 200.0 }
+        box { min -600.0 0.0 200.0 max -500.0 38 300.0 }
+        box { min -600.0 0.0 300.0 max -500.0 73 400.0 }
+        box { min -600.0 0.0 400.0 max -500.0 7 500.0 }
+        box { min -600.0 0.0 500.0 max -500.0 57 600.0 }
+        box { min -600.0 0.0 600.0 max -500.0 28 700.0 }
+        box { min -600.0 0.0 700.0 max -500.0 49 800.0 }
+        box { min -600.0 0.0 800.0 max -500.0 79 900.0 }
+        box { min -600.0 0.0 900.0 max -500.0 28 1000.0 }
+        box { min -500.0 0.0 -1000.0 max -400.0 42 -900.0 }
+        box { min -500.0 0.0 -900.0 max -400.0 19 -800.0 }
+        box { min -500.0 0.0 -800.0 max -400.0 29 -700.0 }
+        box { min -500.0 0.0 -700.0 max -400.0 54 -600.0 }
+        box { min -500.0 0.0 -600.0 max -400.0 45 -500.0 }
+        box { min -500.0 0.0 -500.0 max -400.0 90 -400.0 }
+        box { min -500.0 0.0 -400.0 max -400.0 86 -300.0 }
+        box { min -500.0 0.0 -300.0 max -400.0 68 -200.0 }
+        box { min -500.0 0.0 -200.0 max -400.0 28 -100.0 }
+        box { min -500.0 0.0 -100.0 max -400.0 6 0.0 }
+        box { min -500.0 0.0 0.0 max -400.0 81 100.0 }
+        box { min -500.0 0.0 100.0 max -400.0 52 200.0 }
+        box { min -500.0 0.0 200.0 max -400.0 92 300.0 }
+        box { min -500.0 0.0 300.0 max -400.0 85 400.0 }
+        box { min -500.0 0.0 400.0 max -400.0 97 500.0 }
+        box { min -500.0 0.0 500.0 max -400.0 99 600.0 }
+        box { min -500.0 0.0 600.0 max -400.0 83 700.0 }
+        box { min -500.0 0.0 700.0 max -400.0 37 800.0 }
+        box { min -500.0 0.0 800.0 max -400.0 8 900.0 }
+        box { min -500.0 0.0 900.0 max -400.0 16 1000.0 }
+        box { min -400.0 0.0 -1000.0 max -300.0 26 -900.0 }
+        box { min -400.0 0.0 -900.0 max -300.0 44 -800.0 }
+        box { min -400.0 0.0 -800.0 max -300.0 54 -700.0 }
+        box { min -400.0 0.0 -700.0 max -300.0 34 -600.0 }
+        box { min -400.0 0.0 -600.0 max -300.0 28 -500.0 }
+        box { min -400.0 0.0 -500.0 max -300.0 55 -400.0 }
+        box { min -400.0 0.0 -400.0 max -300.0 68 -300.0 }
+        box { min -400.0 0.0 -300.0 max -300.0 101 -200.0 }
+        box { min -400.0 0.0 -200.0 max -300.0 75 -100.0 }
+        box { min -400.0 0.0 -100.0 max -300.0 90 0.0 }
+        box { min -400.0 0.0 0.0 max -300.0 11 100.0 }
+        box { min -400.0 0.0 100.0 max -300.0 42 200.0 }
+        box { min -400.0 0.0 200.0 max -300.0 79 300.0 }
+        box { min -400.0 0.0 300.0 max -300.0 9 400.0 }
+        box { min -400.0 0.0 400.0 max -300.0 51 500.0 }
+        box { min -400.0 0.0 500.0 max -300.0 47 600.0 }
+        box { min -400.0 0.0 600.0 max -300.0 2 700.0 }
+        box { min -400.0 0.0 700.0 max -300.0 74 800.0 }
+        box { min -400.0 0.0 800.0 max -300.0 54 900.0 }
+        box { min -400.0 0.0 900.0 max -300.0 19 1000.0 }
+        box { min -300.0 0.0 -1000.0 max -200.0 9 -900.0 }
+        box { min -300.0 0.0 -900.0 max -200.0 3 -800.0 }
+        box { min -300.0 0.0 -800.0 max -200.0 58 -700.0 }
+        box { min -300.0 0.0 -700.0 max -200.0 18 -600.0 }
+        box { min -300.0 0.0 -600.0 max -200.0 33 -500.0 }
+        box { min -300.0 0.0 -500.0 max -200.0 94 -400.0 }
+        box { min -300.0 0.0 -400.0 max -200.0 75 -300.0 }
+        box { min -300.0 0.0 -300.0 max -200.0 10 -200.0 }
+        box { min -300.0 0.0 -200.0 max -200.0 17 -100.0 }
+        box { min -300.0 0.0 -100.0 max -200.0 91 0.0 }
+        box { min -300.0 0.0 0.0 max -200.0 50 100.0 }
+        box { min -300.0 0.0 100.0 max -200.0 33 200.0 }
+        box { min -300.0 0.0 200.0 max -200.0 84 300.0 }
+        box { min -300.0 0.0 300.0 max -200.0 94 400.0 }
+        box { min -300.0 0.0 400.0 max -200.0 84 500.0 }
+        box { min -300.0 0.0 500.0 max -200.0 91 600.0 }
+        box { min -300.0 0.0 600.0 max -200.0 82 700.0 }
+        box { min -300.0 0.0 700.0 max -200.0 12 800.0 }
+        box { min -300.0 0.0 800.0 max -200.0 88 900.0 }
+        box { min -300.0 0.0 900.0 max -200.0 32 1000.0 }
+        box { min -200.0 0.0 -1000.0 max -100.0 63 -900.0 }
+        box { min -200.0 0.0 -900.0 max -100.0 41 -800.0 }
+        box { min -200.0 0.0 -800.0 max -100.0 86 -700.0 }
+        box { min -200.0 0.0 -700.0 max -100.0 45 -600.0 }
+        box { min -200.0 0.0 -600.0 max -100.0 38 -500.0 }
+        box { min -200.0 0.0 -500.0 max -100.0 46 -400.0 }
+        box { min -200.0 0.0 -400.0 max -100.0 96 -300.0 }
+        box { min -200.0 0.0 -300.0 max -100.0 61 -200.0 }
+        box { min -200.0 0.0 -200.0 max -100.0 69 -100.0 }
+        box { min -200.0 0.0 -100.0 max -100.0 27 0.0 }
+        box { min -200.0 0.0 0.0 max -100.0 66 100.0 }
+        box { min -200.0 0.0 100.0 max -100.0 18 200.0 }
+        box { min -200.0 0.0 200.0 max -100.0 24 300.0 }
+        box { min -200.0 0.0 300.0 max -100.0 69 400.0 }
+        box { min -200.0 0.0 400.0 max -100.0 81 500.0 }
+        box { min -200.0 0.0 500.0 max -100.0 17 600.0 }
+        box { min -200.0 0.0 600.0 max -100.0 30 700.0 }
+        box { min -200.0 0.0 700.0 max -100.0 1 800.0 }
+        box { min -200.0 0.0 800.0 max -100.0 64 900.0 }
+        box { min -200.0 0.0 900.0 max -100.0 56 1000.0 }
+        box { min -100.0 0.0 -1000.0 max 0.0 62 -900.0 }
+        box { min -100.0 0.0 -900.0 max 0.0 39 -800.0 }
+        box { min -100.0 0.0 -800.0 max 0.0 90 -700.0 }
+        box { min -100.0 0.0 -700.0 max 0.0 86 -600.0 }
+        box { min -100.0 0.0 -600.0 max 0.0 50 -500.0 }
+        box { min -100.0 0.0 -500.0 max 0.0 55 -400.0 }
+        box { min -100.0 0.0 -400.0 max 0.0 20 -300.0 }
+        box { min -100.0 0.0 -300.0 max 0.0 43 -200.0 }
+        box { min -100.0 0.0 -200.0 max 0.0 68 -100.0 }
+        box { min -100.0 0.0 -100.0 max 0.0 45 0.0 }
+        box { min -100.0 0.0 0.0 max 0.0 82 100.0 }
+        box { min -100.0 0.0 100.0 max 0.0 77 200.0 }
+        box { min -100.0 0.0 200.0 max 0.0 91 300.0 }
+        box { min -100.0 0.0 300.0 max 0.0 41 400.0 }
+        box { min -100.0 0.0 400.0 max 0.0 82 500.0 }
+        box { min -100.0 0.0 500.0 max 0.0 60 600.0 }
+        box { min -100.0 0.0 600.0 max 0.0 82 700.0 }
+        box { min -100.0 0.0 700.0 max 0.0 99 800.0 }
+        box { min -100.0 0.0 800.0 max 0.0 59 900.0 }
+        box { min -100.0 0.0 900.0 max 0.0 7 1000.0 }
+        box { min 0.0 0.0 -1000.0 max 100.0 64 -900.0 }
+        box { min 0.0 0.0 -900.0 max 100.0 62 -800.0 }
+        box { min 0.0 0.0 -800.0 max 100.0 72 -700.0 }
+        box { min 0.0 0.0 -700.0 max 100.0 88 -600.0 }
+        box { min 0.0 0.0 -600.0 max 100.0 19 -500.0 }
+        box { min 0.0 0.0 -500.0 max 100.0 86 -400.0 }
+        box { min 0.0 0.0 -400.0 max 100.0 12 -300.0 }
+        box { min 0.0 0.0 -300.0 max 100.0 29 -200.0 }
+        box { min 0.0 0.0 -200.0 max 100.0 49 -100.0 }
+        box { min 0.0 0.0 -100.0 max 100.0 67 0.0 }
+        box { min 0.0 0.0 0.0 max 100.0 77 100.0 }
+        box { min 0.0 0.0 100.0 max 100.0 77 200.0 }
+        box { min 0.0 0.0 200.0 max 100.0 42 300.0 }
+        box { min 0.0 0.0 300.0 max 100.0 39 400.0 }
+        box { min 0.0 0.0 400.0 max 100.0 27 500.0 }
+        box { min 0.0 0.0 500.0 max 100.0 59 600.0 }
+        box { min 0.0 0.0 600.0 max 100.0 45 700.0 }
+        box { min 0.0 0.0 700.0 max 100.0 83 800.0 }
+        box { min 0.0 0.0 800.0 max 100.0 44 900.0 }
+        box { min 0.0 0.0 900.0 max 100.0 35 1000.0 }
+        box { min 100.0 0.0 -1000.0 max 200.0 42 -900.0 }
+        box { min 100.0 0.0 -900.0 max 200.0 51 -800.0 }
+        box { min 100.0 0.0 -800.0 max 200.0 99 -700.0 }
+        box { min 100.0 0.0 -700.0 max 200.0 69 -600.0 }
+        box { min 100.0 0.0 -600.0 max 200.0 41 -500.0 }
+        box { min 100.0 0.0 -500.0 max 200.0 28 -400.0 }
+        box { min 100.0 0.0 -400.0 max 200.0 48 -300.0 }
+        box { min 100.0 0.0 -300.0 max 200.0 37 -200.0 }
+        box { min 100.0 0.0 -200.0 max 200.0 69 -100.0 }
+        box { min 100.0 0.0 -100.0 max 200.0 33 0.0 }
+        box { min 100.0 0.0 0.0 max 200.0 4 100.0 }
+        box { min 100.0 0.0 100.0 max 200.0 30 200.0 }
+        box { min 100.0 0.0 200.0 max 200.0 14 300.0 }
+        box { min 100.0 0.0 300.0 max 200.0 33 400.0 }
+        box { min 100.0 0.0 400.0 max 200.0 34 500.0 }
+        box { min 100.0 0.0 500.0 max 200.0 31 600.0 }
+        box { min 100.0 0.0 600.0 max 200.0 66 700.0 }
+        box { min 100.0 0.0 700.0 max 200.0 60 800.0 }
+        box { min 100.0 0.0 800.0 max 200.0 16 900.0 }
+        box { min 100.0 0.0 900.0 max 200.0 54 1000.0 }
+        box { min 200.0 0.0 -1000.0 max 300.0 21 -900.0 }
+        box { min 200.0 0.0 -900.0 max 300.0 62 -800.0 }
+        box { min 200.0 0.0 -800.0 max 300.0 4 -700.0 }
+        box { min 200.0 0.0 -700.0 max 300.0 59 -600.0 }
+        box { min 200.0 0.0 -600.0 max 300.0 73 -500.0 }
+        box { min 200.0 0.0 -500.0 max 300.0 56 -400.0 }
+        box { min 200.0 0.0 -400.0 max 300.0 91 -300.0 }
+        box { min 200.0 0.0 -300.0 max 300.0 74 -200.0 }
+        box { min 200.0 0.0 -200.0 max 300.0 26 -100.0 }
+        box { min 200.0 0.0 -100.0 max 300.0 26 0.0 }
+        box { min 200.0 0.0 0.0 max 300.0 57 100.0 }
+        box { min 200.0 0.0 100.0 max 300.0 58 200.0 }
+        box { min 200.0 0.0 200.0 max 300.0 72 300.0 }
+        box { min 200.0 0.0 300.0 max 300.0 9 400.0 }
+        box { min 200.0 0.0 400.0 max 300.0 45 500.0 }
+        box { min 200.0 0.0 500.0 max 300.0 26 600.0 }
+        box { min 200.0 0.0 600.0 max 300.0 48 700.0 }
+        box { min 200.0 0.0 700.0 max 300.0 33 800.0 }
+        box { min 200.0 0.0 800.0 max 300.0 70 900.0 }
+        box { min 200.0 0.0 900.0 max 300.0 79 1000.0 }
+        box { min 300.0 0.0 -1000.0 max 400.0 30 -900.0 }
+        box { min 300.0 0.0 -900.0 max 400.0 76 -800.0 }
+        box { min 300.0 0.0 -800.0 max 400.0 7 -700.0 }
+        box { min 300.0 0.0 -700.0 max 400.0 49 -600.0 }
+        box { min 300.0 0.0 -600.0 max 400.0 55 -500.0 }
+        box { min 300.0 0.0 -500.0 max 400.0 86 -400.0 }
+        box { min 300.0 0.0 -400.0 max 400.0 69 -300.0 }
+        box { min 300.0 0.0 -300.0 max 400.0 62 -200.0 }
+        box { min 300.0 0.0 -200.0 max 400.0 98 -100.0 }
+        box { min 300.0 0.0 -100.0 max 400.0 61 0.0 }
+        box { min 300.0 0.0 0.0 max 400.0 49 100.0 }
+        box { min 300.0 0.0 100.0 max 400.0 83 200.0 }
+        box { min 300.0 0.0 200.0 max 400.0 13 300.0 }
+        box { min 300.0 0.0 300.0 max 400.0 7 400.0 }
+        box { min 300.0 0.0 400.0 max 400.0 90 500.0 }
+        box { min 300.0 0.0 500.0 max 400.0 65 600.0 }
+        box { min 300.0 0.0 600.0 max 400.0 32 700.0 }
+        box { min 300.0 0.0 700.0 max 400.0 97 800.0 }
+        box { min 300.0 0.0 800.0 max 400.0 53 900.0 }
+        box { min 300.0 0.0 900.0 max 400.0 93 1000.0 }
+        box { min 400.0 0.0 -1000.0 max 500.0 19 -900.0 }
+        box { min 400.0 0.0 -900.0 max 500.0 89 -800.0 }
+        box { min 400.0 0.0 -800.0 max 500.0 87 -700.0 }
+        box { min 400.0 0.0 -700.0 max 500.0 1 -600.0 }
+        box { min 400.0 0.0 -600.0 max 500.0 7 -500.0 }
+        box { min 400.0 0.0 -500.0 max 500.0 67 -400.0 }
+        box { min 400.0 0.0 -400.0 max 500.0 77 -300.0 }
+        box { min 400.0 0.0 -300.0 max 500.0 96 -200.0 }
+        box { min 400.0 0.0 -200.0 max 500.0 7 -100.0 }
+        box { min 400.0 0.0 -100.0 max 500.0 89 0.0 }
+        box { min 400.0 0.0 0.0 max 500.0 94 100.0 }
+        box { min 400.0 0.0 100.0 max 500.0 88 200.0 }
+        box { min 400.0 0.0 200.0 max 500.0 29 300.0 }
+        box { min 400.0 0.0 300.0 max 500.0 70 400.0 }
+        box { min 400.0 0.0 400.0 max 500.0 78 500.0 }
+        box { min 400.0 0.0 500.0 max 500.0 77 600.0 }
+        box { min 400.0 0.0 600.0 max 500.0 90 700.0 }
+        box { min 400.0 0.0 700.0 max 500.0 79 800.0 }
+        box { min 400.0 0.0 800.0 max 500.0 56 900.0 }
+        box { min 400.0 0.0 900.0 max 500.0 5 1000.0 }
+        box { min 500.0 0.0 -1000.0 max 600.0 35 -900.0 }
+        box { min 500.0 0.0 -900.0 max 600.0 29 -800.0 }
+        box { min 500.0 0.0 -800.0 max 600.0 99 -700.0 }
+        box { min 500.0 0.0 -700.0 max 600.0 64 -600.0 }
+        box { min 500.0 0.0 -600.0 max 600.0 3 -500.0 }
+        box { min 500.0 0.0 -500.0 max 600.0 41 -400.0 }
+        box { min 500.0 0.0 -400.0 max 600.0 15 -300.0 }
+        box { min 500.0 0.0 -300.0 max 600.0 81 -200.0 }
+        box { min 500.0 0.0 -200.0 max 600.0 79 -100.0 }
+        box { min 500.0 0.0 -100.0 max 600.0 99 0.0 }
+        box { min 500.0 0.0 0.0 max 600.0 95 100.0 }
+        box { min 500.0 0.0 100.0 max 600.0 52 200.0 }
+        box { min 500.0 0.0 200.0 max 600.0 35 300.0 }
+        box { min 500.0 0.0 300.0 max 600.0 26 400.0 }
+        box { min 500.0 0.0 400.0 max 600.0 43 500.0 }
+        box { min 500.0 0.0 500.0 max 600.0 79 600.0 }
+        box { min 500.0 0.0 600.0 max 600.0 29 700.0 }
+        box { min 500.0 0.0 700.0 max 600.0 31 800.0 }
+        box { min 500.0 0.0 800.0 max 600.0 91 900.0 }
+        box { min 500.0 0.0 900.0 max 600.0 71 1000.0 }
+        box { min 600.0 0.0 -1000.0 max 700.0 2 -900.0 }
+        box { min 600.0 0.0 -900.0 max 700.0 61 -800.0 }
+        box { min 600.0 0.0 -800.0 max 700.0 2 -700.0 }
+        box { min 600.0 0.0 -700.0 max 700.0 42 -600.0 }
+        box { min 600.0 0.0 -600.0 max 700.0 66 -500.0 }
+        box { min 600.0 0.0 -500.0 max 700.0 16 -400.0 }
+        box { min 600.0 0.0 -400.0 max 700.0 70 -300.0 }
+        box { min 600.0 0.0 -300.0 max 700.0 29 -200.0 }
+        box { min 600.0 0.0 -200.0 max 700.0 94 -100.0 }
+        box { min 600.0 0.0 -100.0 max 700.0 62 0.0 }
+        box { min 600.0 0.0 0.0 max 700.0 56 100.0 }
+        box { min 600.0 0.0 100.0 max 700.0 32 200.0 }
+        box { min 600.0 0.0 200.0 max 700.0 41 300.0 }
+        box { min 600.0 0.0 300.0 max 700.0 89 400.0 }
+        box { min 600.0 0.0 400.0 max 700.0 13 500.0 }
+        box { min 600.0 0.0 500.0 max 700.0 74 600.0 }
+        box { min 600.0 0.0 600.0 max 700.0 87 700.0 }
+        box { min 600.0 0.0 700.0 max 700.0 37 800.0 }
+        box { min 600.0 0.0 800.0 max 700.0 51 900.0 }
+        box { min 600.0 0.0 900.0 max 700.0 36 1000.0 }
+        box { min 700.0 0.0 -1000.0 max 800.0 101 -900.0 }
+        box { min 700.0 0.0 -900.0 max 800.0 74 -800.0 }
+        box { min 700.0 0.0 -800.0 max 800.0 11 -700.0 }
+        box { min 700.0 0.0 -700.0 max 800.0 43 -600.0 }
+        box { min 700.0 0.0 -600.0 max 800.0 86 -500.0 }
+        box { min 700.0 0.0 -500.0 max 800.0 47 -400.0 }
+        box { min 700.0 0.0 -400.0 max 800.0 1 -300.0 }
+        box { min 700.0 0.0 -300.0 max 800.0 76 -200.0 }
+        box { min 700.0 0.0 -200.0 max 800.0 96 -100.0 }
+        box { min 700.0 0.0 -100.0 max 800.0 94 0.0 }
+        box { min 700.0 0.0 0.0 max 800.0 86 100.0 }
+        box { min 700.0 0.0 100.0 max 800.0 56 200.0 }
+        box { min 700.0 0.0 200.0 max 800.0 59 300.0 }
+        box { min 700.0 0.0 300.0 max 800.0 89 400.0 }
+        box { min 700.0 0.0 400.0 max 800.0 40 500.0 }
+        box { min 700.0 0.0 500.0 max 800.0 26 600.0 }
+        box { min 700.0 0.0 600.0 max 800.0 77 700.0 }
+        box { min 700.0 0.0 700.0 max 800.0 75 800.0 }
+        box { min 700.0 0.0 800.0 max 800.0 89 900.0 }
+        box { min 700.0 0.0 900.0 max 800.0 8 1000.0 }
+        box { min 800.0 0.0 -1000.0 max 900.0 54 -900.0 }
+        box { min 800.0 0.0 -900.0 max 900.0 55 -800.0 }
+        box { min 800.0 0.0 -800.0 max 900.0 91 -700.0 }
+        box { min 800.0 0.0 -700.0 max 900.0 25 -600.0 }
+        box { min 800.0 0.0 -600.0 max 900.0 86 -500.0 }
+        box { min 800.0 0.0 -500.0 max 900.0 98 -400.0 }
+        box { min 800.0 0.0 -400.0 max 900.0 50 -300.0 }
+        box { min 800.0 0.0 -300.0 max 900.0 75 -200.0 }
+        box { min 800.0 0.0 -200.0 max 900.0 58 -100.0 }
+        box { min 800.0 0.0 -100.0 max 900.0 41 0.0 }
+        box { min 800.0 0.0 0.0 max 900.0 17 100.0 }
+        box { min 800.0 0.0 100.0 max 900.0 37 200.0 }
+        box { min 800.0 0.0 200.0 max 900.0 31 300.0 }
+        box { min 800.0 0.0 300.0 max 900.0 14 400.0 }
+        box { min 800.0 0.0 400.0 max 900.0 94 500.0 }
+        box { min 800.0 0.0 500.0 max 900.0 101 600.0 }
+        box { min 800.0 0.0 600.0 max 900.0 58 700.0 }
+        box { min 800.0 0.0 700.0 max 900.0 19 800.0 }
+        box { min 800.0 0.0 800.0 max 900.0 88 900.0 }
+        box { min 800.0 0.0 900.0 max 900.0 53 1000.0 }
+        box { min 900.0 0.0 -1000.0 max 1000.0 55 -900.0 }
+        box { min 900.0 0.0 -900.0 max 1000.0 18 -800.0 }
+        box { min 900.0 0.0 -800.0 max 1000.0 32 -700.0 }
+        box { min 900.0 0.0 -700.0 max 1000.0 91 -600.0 }
+        box { min 900.0 0.0 -600.0 max 1000.0 38 -500.0 }
+        box { min 900.0 0.0 -500.0 max 1000.0 96 -400.0 }
+        box { min 900.0 0.0 -400.0 max 1000.0 71 -300.0 }
+        box { min 900.0 0.0 -300.0 max 1000.0 42 -200.0 }
+        box { min 900.0 0.0 -200.0 max 1000.0 99 -100.0 }
+        box { min 900.0 0.0 -100.0 max 1000.0 12 0.0 }
+        box { min 900.0 0.0 0.0 max 1000.0 19 100.0 }
+        box { min 900.0 0.0 100.0 max 1000.0 56 200.0 }
+        box { min 900.0 0.0 200.0 max 1000.0 38 300.0 }
+        box { min 900.0 0.0 300.0 max 1000.0 31 400.0 }
+        box { min 900.0 0.0 400.0 max 1000.0 71 500.0 }
+        box { min 900.0 0.0 500.0 max 1000.0 12 600.0 }
+        box { min 900.0 0.0 600.0 max 1000.0 82 700.0 }
+        box { min 900.0 0.0 700.0 max 1000.0 14 800.0 }
+        box { min 900.0 0.0 800.0 max 1000.0 96 900.0 }
+        box { min 900.0 0.0 900.0 max 1000.0 56 1000.0 }
+    
+    MaterialIndex 1
+    xz_rect 123 423 147 412 554
+    
+    MaterialIndex 2
+    MovingSphere {
+        center0 400 400 200
+        center1 430 400 200
+        time0 0
+        time1 1
+        radius 50
+    }
+
+    MaterialIndex 3
+    Sphere {
+        center 260 150 45
+        radius 50
+    }
+
+    MaterialIndex 4
+    Sphere {
+        center 0 150 145
+        radius 50
+    }
+
+    MaterialIndex 5
+    constant_medium {
+        MaterialIndex 3
+        density 0.2
+        Sphere {
+            center 360 150 145
+            radius 70
+        }
+    }
+
+    MaterialIndex 6
+    constant_medium {
+        MaterialIndex 3
+        density 0.0001
+        Sphere {
+            center 0 0 0
+            radius 5000
+        }
+    }
+
+    MaterialIndex 7
+    Sphere {
+        center 400 200 400
+        radius 100
+    }
+
+    MaterialIndex 8
+    Sphere {
+        center 220 280 300
+        radius 80
+    }
+
+    MaterialIndex 9
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 108 64 2 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 146 10 66 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 136 89 97 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 100 154 72 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 141 119 143 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 40 138 116 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 7 158 132 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 144 156 54 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 106 161 98 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 147 42 63 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 152 92 152 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 81 93 6 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 60 94 46 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 73 10 150 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 96 143 142 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 133 89 111 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 144 158 67 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 65 36 156 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 156 70 87 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 125 96 131 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 17 65 81 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 65 56 90 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 82 162 161 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 62 152 78 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 15 59 36 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 49 157 88 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 58 99 160 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 102 25 0 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 148 124 91 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 100 86 16 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 73 150 29 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 97 148 145 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 160 98 2 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 69 56 56 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 83 105 113 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 17 14 149 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 147 33 42 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 108 141 54 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 6 120 3 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 34 102 73 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 10 123 164 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 58 30 62 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 126 89 9 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 56 61 153 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 15 10 111 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 154 28 150 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 0 15 142 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 120 63 9 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 139 159 32 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 36 100 57 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 137 113 140 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 152 140 81 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 147 95 20 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 37 107 26 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 131 35 26 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 21 83 105 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 15 83 46 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 39 91 162 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 35 5 142 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 69 6 80 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 106 57 94 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 89 82 118 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 164 145 161 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 5 8 79 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 103 15 75 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 157 73 85 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 7 116 22 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 89 81 123 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 163 157 108 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 4 100 46 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 30 50 95 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 15 1 81 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 98 5 123 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 163 160 134 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 14 146 89 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 114 124 57 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 110 149 129 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 101 40 47 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 76 158 18 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 9 97 0 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 79 81 72 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 126 92 126 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 79 123 44 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 165 151 42 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 80 59 148 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 85 77 153 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 103 101 69 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 131 13 4 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 69 38 76 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 57 9 34 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 93 137 155 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 118 136 54 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 125 3 21 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 115 54 115 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 154 146 133 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 19 127 82 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 15 80 115 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 89 98 39 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 107 37 24 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 4 105 6 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 164 71 8 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 116 114 128 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 165 45 98 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 3 147 19 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 161 86 81 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 103 50 67 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 15 88 60 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 94 105 89 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 47 91 154 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 58 70 117 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 94 84 136 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 134 153 93 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 76 156 156 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 38 45 156 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 119 131 102 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 108 132 105 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 79 105 116 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 33 139 56 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 134 165 165 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 48 144 124 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 145 80 120 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 142 14 83 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 140 163 13 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 119 71 120 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 129 155 118 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 45 22 161 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 23 81 53 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 3 162 68 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 24 143 90 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 14 118 97 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 38 4 124 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 116 139 128 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 12 69 37 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 47 150 32 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 94 68 9 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 71 38 165 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 160 114 160 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 5 21 53 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 92 149 88 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 45 25 37 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 106 54 29 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 63 26 10 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 158 139 37 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 104 124 59 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 140 2 43 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 125 33 3 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 32 163 111 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 109 127 73 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 105 97 58 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 20 78 134 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 4 23 41 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 85 105 156 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 10 85 78 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 27 111 107 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 108 4 59 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 82 2 147 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 70 4 163 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 115 19 4 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 96 40 86 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 140 98 13 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 95 121 101 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 38 55 20 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 107 90 118 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 52 156 84 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 99 94 50 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 154 54 118 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 162 157 158 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 12 7 77 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 86 21 111 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 40 112 43 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 123 157 22 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 136 147 157 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 105 164 104 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 43 103 32 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 27 127 137 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 104 63 25 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 81 72 51 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 6 56 63 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 154 92 163 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 86 127 76 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 22 30 134 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 22 88 110 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 51 109 117 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 119 83 82 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 123 149 65 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 151 51 16 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 70 131 133 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 118 124 24 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 30 39 159 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 119 36 63 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 112 148 41 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 10 13 61 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 91 89 156 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 129 75 46 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 50 26 73 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 50 12 56 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 82 140 83 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 0 87 28 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 31 48 31 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 74 156 32 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 161 70 30 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 65 89 68 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 137 22 24 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 26 156 127 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 15 49 51 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 49 139 101 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 142 125 2 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 128 16 13 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 12 119 150 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 95 64 13 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 126 11 162 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 135 161 74 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 61 108 131 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 66 22 29 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 41 148 148 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 101 5 132 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 64 140 33 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 11 82 160 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 133 136 22 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 48 14 154 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 88 65 161 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 56 41 4 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 48 162 43 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 40 150 78 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 156 133 62 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 17 37 147 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 61 55 41 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 140 140 101 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 37 48 144 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 161 90 63 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 46 26 19 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 161 129 58 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 94 10 110 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 52 48 79 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 109 114 6 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 45 63 154 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 110 26 65 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 60 57 121 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 1 108 55 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 6 60 85 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 104 163 33 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 101 105 125 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 15 116 65 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 51 87 28 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 4 70 149 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 149 93 162 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 145 136 50 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 111 16 75 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 38 85 146 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 87 136 96 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 53 57 38 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 129 74 120 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 11 91 146 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 0 57 3 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 16 3 137 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 154 23 143 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 148 78 0 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 80 32 14 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 99 24 138 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 54 7 64 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 150 116 117 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 38 164 49 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 111 36 151 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 77 2 90 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 7 88 69 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 109 89 140 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 117 159 82 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 126 40 138 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 31 15 18 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 127 0 56 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 11 143 94 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 138 98 95 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 42 112 4 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 89 59 162 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 114 31 137 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 75 134 129 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 62 124 123 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 133 163 40 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 83 153 108 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 139 122 50 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 123 106 12 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 141 121 98 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 75 155 73 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 21 66 47 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 45 141 99 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 45 22 126 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 80 77 51 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 80 71 85 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 35 53 24 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 133 136 129 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 87 111 49 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 13 34 46 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 1 21 56 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 23 80 100 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 8 154 76 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 12 91 28 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 40 63 10 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 122 161 49 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 96 39 82 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 47 21 149 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 136 141 10 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 68 79 133 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 105 118 90 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 126 39 67 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 92 82 132 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 85 144 27 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 104 152 50 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 145 59 31 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 141 114 133 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 62 78 17 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 29 107 112 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 85 37 15 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 107 69 97 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 43 159 97 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 163 91 30 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 86 164 81 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 115 27 91 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 136 126 48 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 21 148 135 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 143 30 104 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 26 119 46 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 59 137 14 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 3 157 140 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 78 87 75 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 71 20 102 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 43 129 51 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 49 47 7 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 18 19 74 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 83 53 14 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 62 105 63 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 141 130 68 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 126 131 47 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 139 96 30 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 6 27 55 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 78 1 59 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 64 102 111 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 110 137 11 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 90 131 7 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 49 142 43 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 136 153 55 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 165 103 156 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 80 101 84 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 139 34 70 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 30 82 154 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 40 164 149 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 70 75 126 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 42 25 148 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 9 163 115 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 125 10 159 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 136 141 85 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 165 137 51 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 47 149 76 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 32 51 85 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 35 45 64 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 38 97 38 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 87 64 20 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 119 18 84 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 74 56 2 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 67 53 104 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 43 14 26 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 8 14 155 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 130 24 41 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 145 143 94 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 93 138 98 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 0 131 69 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 158 148 152 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 5 75 138 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 23 61 37 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 49 42 145 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 11 95 16 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 143 3 134 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 71 132 76 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 70 38 69 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 118 30 144 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 157 73 135 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 93 66 24 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 11 112 122 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 146 68 88 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 124 11 17 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 8 65 111 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 123 164 108 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 42 76 108 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 42 38 35 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 99 40 13 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 116 148 142 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 163 14 72 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 133 113 152 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 35 116 57 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 14 47 126 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 39 71 105 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 85 80 149 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 90 145 124 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 36 31 34 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 143 19 30 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 30 110 135 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 106 111 112 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 122 74 156 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 133 30 67 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 90 129 161 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 26 23 109 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 146 110 56 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 2 149 0 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 59 38 155 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 109 18 150 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 95 6 129 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 147 137 147 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 150 100 129 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 109 132 32 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 114 146 160 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 91 50 26 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 3 113 122 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 81 38 154 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 100 90 121 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 128 54 95 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 159 43 5 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 96 150 65 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 115 125 40 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 14 126 48 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 60 155 120 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 118 48 43 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 59 85 140 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 64 42 116 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 118 149 152 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 7 131 35 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 95 106 44 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 160 11 146 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 152 54 10 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 33 102 112 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 43 36 121 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 121 46 82 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 110 147 147 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 125 85 142 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 85 54 72 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 9 15 60 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 23 47 148 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 7 6 35 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 36 156 70 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 4 132 138 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 123 127 7 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 84 96 78 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 48 83 7 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 161 1 69 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 34 31 140 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 50 123 5 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 156 12 98 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 162 144 87 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 95 74 1 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 146 60 147 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 73 1 74 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 33 109 86 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 24 144 12 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 52 31 72 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 17 156 75 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 72 136 54 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 74 23 108 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 25 119 72 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 153 43 157 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 87 124 156 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 41 73 25 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 68 90 24 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 93 7 48 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 29 57 81 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 78 103 131 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 81 59 0 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 37 128 32 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 128 53 59 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 76 77 104 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 125 131 15 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 71 134 48 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 130 14 59 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 123 96 23 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 111 50 78 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 62 38 85 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 39 39 89 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 25 126 63 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 93 91 50 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 106 132 83 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 94 48 71 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 76 4 38 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 118 69 26 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 118 14 144 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 165 85 15 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 46 68 141 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 104 142 134 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 7 34 148 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 2 15 56 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 158 165 15 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 132 44 107 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 131 130 43 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 98 56 119 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 143 82 23 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 28 60 38 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 161 154 113 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 156 115 93 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 125 18 132 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 81 14 142 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 110 70 11 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 119 41 88 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 9 26 70 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 164 51 134 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 62 148 11 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 93 53 12 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 28 127 103 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 16 130 42 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 126 90 9 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 90 83 53 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 95 11 160 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 28 120 127 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 9 36 71 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 27 4 116 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 146 81 147 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 128 101 71 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 80 151 16 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 124 71 117 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 103 17 79 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 129 104 18 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 53 40 42 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 121 31 99 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 125 80 112 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 25 10 116 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 118 6 138 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 40 127 31 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 158 148 107 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 72 48 87 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 142 9 141 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 71 108 145 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 75 15 49 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 37 55 77 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 96 119 154 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 114 34 91 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 62 25 98 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 96 36 115 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 135 125 52 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 135 125 89 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 144 34 36 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 156 96 117 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 51 25 26 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 90 64 65 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 18 67 9 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 136 142 96 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 4 69 93 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 145 134 39 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 161 117 84 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 164 98 149 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 153 62 75 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 22 26 84 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 93 8 16 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 39 147 27 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 84 65 122 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 148 155 60 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 27 107 55 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 0 92 94 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 101 162 15 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 33 164 18 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 138 52 163 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 124 143 31 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 85 104 70 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 116 69 129 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 33 54 114 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 41 48 154 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 83 158 128 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 122 135 59 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 157 148 115 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 17 105 96 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 99 72 88 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 151 109 4 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 13 53 0 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 66 70 108 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 63 36 139 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 50 21 105 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 25 37 153 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 47 38 39 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 45 85 30 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 56 122 147 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 37 77 120 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 93 153 21 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 107 37 140 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 8 37 26 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 127 153 152 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 64 99 59 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 126 161 41 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 144 129 64 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 47 18 8 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 94 22 82 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 47 48 30 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 96 79 5 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 26 54 15 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 95 91 147 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 41 8 7 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 149 92 94 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 67 72 164 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 62 116 104 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 119 19 149 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 58 53 7 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 5 61 133 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 46 72 154 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 136 39 32 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 6 146 16 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 125 139 82 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 46 30 105 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 70 130 143 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 13 53 86 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 7 113 19 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 142 43 30 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 116 97 148 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 38 151 93 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 161 66 140 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 77 21 35 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 122 24 79 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 155 75 126 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 161 137 115 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 80 101 2 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 130 123 142 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 115 36 55 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 104 22 27 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 67 26 135 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 64 102 34 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 4 9 12 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 43 43 102 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 158 141 62 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 107 158 4 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 39 135 123 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 69 148 38 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 60 34 0 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 97 27 71 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 51 45 1 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 44 89 69 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 75 11 99 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 112 10 32 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 127 162 136 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 16 35 56 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 121 128 29 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 48 162 8 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 96 82 5 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 68 138 22 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 113 67 149 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 2 84 101 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 162 103 153 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 29 82 69 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 83 140 106 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 51 96 133 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 89 47 122 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 45 102 83 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 57 69 117 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 65 123 152 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 39 111 88 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 1 53 48 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 92 73 99 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 126 56 122 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 148 81 128 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 51 91 58 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 165 24 115 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 47 27 99 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 130 4 120 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 9 72 43 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 34 86 56 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 157 43 162 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 52 72 86 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 29 29 65 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 142 96 138 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 83 12 134 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 139 148 164 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 138 102 21 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 141 158 159 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 147 112 157 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 136 34 92 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 54 34 101 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 107 26 133 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 14 140 149 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 18 127 159 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 67 79 66 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 45 113 132 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 32 132 79 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 92 4 10 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 24 96 109 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 74 118 135 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 83 56 8 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 66 29 96 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 110 162 150 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 36 72 159 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 12 4 127 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 28 32 67 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 103 24 27 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 84 33 76 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 81 124 32 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 140 66 50 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 89 61 107 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 141 152 42 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 115 32 73 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 33 94 53 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 109 45 135 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 156 93 135 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 101 51 142 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 9 136 55 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 12 155 67 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 163 97 76 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 89 94 61 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 131 67 30 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 120 154 91 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 125 117 11 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 94 31 111 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 40 102 139 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 66 42 66 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 46 103 48 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 135 59 125 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 154 117 161 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 155 117 158 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 37 29 59 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 122 87 40 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 132 141 121 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 18 15 66 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 87 26 40 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 44 89 36 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 142 109 142 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 107 156 40 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 155 115 63 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 10 57 56 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 56 72 9 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 29 165 115 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 141 30 87 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 126 112 62 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 42 160 14 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 58 128 154 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 78 90 162 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 160 164 50 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 7 29 110 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 120 43 140 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 9 154 63 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 140 152 0 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 25 68 16 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 49 97 55 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 118 107 62 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 150 106 43 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 94 53 45 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 70 98 92 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 22 79 33 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 120 104 163 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 24 15 116 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 84 34 57 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 26 97 61 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 95 69 12 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 140 34 83 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 35 78 18 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 112 0 68 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 75 101 120 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 45 107 149 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 149 88 103 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 38 112 94 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 133 143 2 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 59 157 105 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 48 7 128 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 107 143 78 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 164 93 38 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 146 102 141 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 109 138 22 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 158 71 129 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 56 65 78 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 26 122 109 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 139 105 125 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 15 47 87 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 55 44 133 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 31 86 58 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 162 28 160 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 158 11 30 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 62 117 116 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 146 118 18 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 54 109 134 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 97 148 12 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 41 101 13 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 147 149 130 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 118 60 28 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 110 52 90 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 121 106 110 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 20 153 40 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 83 31 15 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 143 152 79 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 80 4 69 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 143 117 116 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 159 64 83 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 44 61 6 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 86 136 102 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 103 163 14 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 103 43 48 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 36 21 38 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 53 11 68 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 37 72 127 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 16 27 31 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 30 25 60 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 71 147 16 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 159 130 72 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 129 161 116 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 163 32 108 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 45 112 119 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 98 160 70 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 155 12 55 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 32 160 155 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 8 63 78 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 4 68 95 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 149 46 165 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 52 13 24 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 105 49 69 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 161 56 67 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 124 147 88 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 24 57 13 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 53 44 89 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 1 66 33 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 136 142 58 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 47 147 138 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 44 74 40 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 41 56 51 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 49 153 3 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 159 69 39 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 24 86 130 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 21 44 68 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 47 60 25 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 85 58 130 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 79 38 135 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 7 46 90 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 79 132 8 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 25 148 119 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 2 112 113 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 111 76 147 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 134 28 104 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 26 115 24 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 131 99 77 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 28 105 66 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 79 4 27 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 3 40 118 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 147 54 56 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 124 13 59 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 81 147 161 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 135 25 160 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 121 39 97 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 149 119 122 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 109 148 100 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 8 73 156 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 100 151 36 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 53 151 84 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 0 94 138 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 96 88 67 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 22 129 82 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 81 121 105 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 113 97 97 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 150 111 39 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 139 98 95 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 29 108 70 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 67 68 5 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 55 36 142 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 56 133 42 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 165 10 8 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 11 47 92 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 122 131 63 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 89 16 102 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 55 25 102 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 82 124 54 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 101 56 156 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 14 140 65 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 63 118 63 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 53 55 115 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 76 49 61 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 149 14 152 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 76 136 126 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 64 52 42 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 102 33 89 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 43 130 145 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 152 37 13 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 32 77 65 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 38 149 158 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 115 55 124 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 81 43 3 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 133 150 69 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 60 114 14 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 100 113 157 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 108 108 4 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 150 165 32 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 155 28 91 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 96 113 11 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 46 86 33 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 3 64 12 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 48 91 84 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 81 131 59 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 60 37 35 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 35 126 151 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 126 90 135 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 63 112 86 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 154 29 122 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 2 152 144 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 20 20 99 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 21 143 105 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 2 122 139 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 56 148 8 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 113 131 120 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 112 151 163 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 66 4 158 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 63 93 131 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 154 130 8 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 108 45 91 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 1 154 84 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 145 145 102 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 43 42 19 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 124 140 22 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 164 94 88 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 108 73 143 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 78 33 91 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 100 37 88 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 92 77 123 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 160 83 30 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 98 74 72 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 33 164 35 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 133 53 73 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 104 43 135 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 119 124 96 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 81 2 134 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 159 158 33 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 118 125 4 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 69 110 101 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 40 165 97 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 32 121 155 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 66 51 34 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 130 121 138 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 150 156 60 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 0 84 9 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 113 107 3 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 162 8 148 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 160 0 161 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 132 165 16 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 107 68 94 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 132 6 91 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 111 0 68 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 29 31 63 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 54 24 140 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 106 82 26 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 38 51 144 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 74 162 48 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 9 19 78 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 19 64 43 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 6 103 118 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 133 13 97 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 114 134 160 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 81 84 138 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 41 71 16 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 42 103 77 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 14 114 140 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 136 138 114 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 36 49 94 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 42 3 22 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 1 110 142 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 84 132 164 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 26 117 130 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 46 10 86 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 66 3 125 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 137 100 42 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 81 120 106 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 141 72 84 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 151 41 91 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 123 33 58 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 46 6 140 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 25 71 76 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 125 58 17 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 137 80 117 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 131 65 85 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 83 86 70 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 55 4 145 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 25 22 68 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 157 95 117 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 163 142 154 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 108 127 16 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 118 142 140 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 65 82 124 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 137 118 127 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 98 18 12 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 4 11 156 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 117 44 55 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 152 97 67 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 100 131 153 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 113 45 82 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 85 23 83 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 87 144 24 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 0 45 13 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 74 118 39 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 84 85 159 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 141 22 72 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 104 123 13 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 86 87 124 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 90 64 47 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 26 147 123 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 138 96 63 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 17 102 93 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 22 164 41 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 30 161 64 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 155 44 153 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 29 107 49 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 82 123 45 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 34 42 86 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 68 112 154 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 44 128 94 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 25 99 8 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 27 136 65 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 37 164 91 radius 10 } }
+    Transform { YRotate 15 Translate -100 270 395 Sphere { center 48 18 129 radius 10 } }
+}
+

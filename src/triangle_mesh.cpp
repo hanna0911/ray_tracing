@@ -28,7 +28,7 @@ bool TriangleMesh::intersect(const Ray &r, Hit &h, float tmin) {
 
 TriangleMesh::TriangleMesh(const char *filename, shared_ptr<Material> material) : Object3D(material) {
 // Mesh::Mesh(const char *filename, Material *material) : Object3D(material) {
-    std::cout << "constructing Mesh obj" << std::endl;
+    // std::cout << "constructing Mesh obj" << std::endl;
     // Optional: Use tiny obj loader to replace this simple one.
     std::ifstream f;
     f.open(filename);
@@ -114,7 +114,7 @@ TriangleMesh::TriangleMesh(const char *filename, shared_ptr<Material> material) 
 
     sides = make_shared<Group>(); // important!
 
-    std::cout << "start construct aabb box for mesh obj" << std::endl;
+    // std::cout << "start construct aabb box for mesh obj" << std::endl;
 
     // aabb
     // box = make_shared<aabb>(box_minimum, box_minimum);   
@@ -135,7 +135,7 @@ TriangleMesh::TriangleMesh(const char *filename, shared_ptr<Material> material) 
     // build tree
     // bvhtree = new bvh_node(faces, 0, faces.size(), 0, 0);
 
-    std::cout << "finish constructing mesh obj" << std::endl;
+    // std::cout << "finish constructing mesh obj" << std::endl;
 
 }
 

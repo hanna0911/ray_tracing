@@ -36,8 +36,8 @@ bool Transform::bounding_box(double time0, double time1, aabb& output_box) const
     Vector3f minimum = transformPoint(original, originalBox.minimum);
     Vector3f maximum = transformPoint(original, originalBox.maximum);
 	output_box = aabb(minimum, maximum);
-    std::cout << "min: " << minimum.x() << " " << minimum.y() << " " << minimum.z() << std::endl; 
-    std::cout << "max: " << maximum.x() << " " << maximum.y() << " " << maximum.z() << std::endl; 
+    // std::cout << "min: " << minimum.x() << " " << minimum.y() << " " << minimum.z() << std::endl; 
+    // std::cout << "max: " << maximum.x() << " " << maximum.y() << " " << maximum.z() << std::endl; 
     return true;
 }
 
