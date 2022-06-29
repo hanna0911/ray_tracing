@@ -15,12 +15,11 @@
 // ====================================================================
 
 Renderer::Renderer(char* _scene, char* _output) {
-    // scene = new SceneParser(_scene);
+    scene = new SceneParser(_scene);
     output = _output;
 }
 
 void RayCaster::render() {
-    /*
     Camera* camera = scene->getCamera();
     Image renderedImg(camera->getWidth(), camera->getHeight());
     // 循环屏幕空间的像素
@@ -38,20 +37,18 @@ void RayCaster::render() {
         }
     }
     renderedImg.SaveImage(output);
-    */
 }
 
 Vector3f RayCaster::traceRay(const Ray &camRay) {
-    /*
     // 判断camRay是否和场景有交点，并返回最近交点的数据，存储在hit中
-    Group* baseGroup = scene->getGroup();
+    shared_ptr<Group> baseGroup = scene->getGroup();
     Hit hit;
     bool isIntersect = baseGroup->intersect(camRay, hit, 0.0001);
     if (isIntersect) {
         Vector3f finalColor = Vector3f::ZERO;
         // 找到交点之后，累加来自所有光源的光强影响
         for (int li = 0; li < scene->getNumLights(); ++li) {
-            Light* light = scene->getLight(li);
+            shared_ptr<Light> light = scene->getLight(li);
             Vector3f L, lightColor;
             // 获得光照强度
             light->getIllumination(camRay.pointAtParameter(hit.getT()), L, lightColor); // 计算局部光强
@@ -62,7 +59,6 @@ Vector3f RayCaster::traceRay(const Ray &camRay) {
     // 不存在交点，返回背景色
         return scene->getBackgroundColor();
     }
-    */
 }
 
 // ====================================================================
@@ -76,22 +72,36 @@ void RayTracer::render() {
     Camera *cam = scene->getCamera();
     int image_width = cam->getWidth();
     int image_height = cam->getHeight();
+    
+    std::cout << image_width << " " << image_height << std::endl;
+
     Image image(image_width, image_height);
+    
+    Vector3f background = scene->getBackgroundColor();
+    std::cout << background.x() << " " << background.y() << " " << background.z() << std::endl;
+    
+    shared_ptr<Group> objects = scene->getGroup();
+    std::cout << objects->objects.size() << std::endl;
+
+    std::cout << scene->getNumMaterials() << std::endl;
     */
     int image_width = 400;
     auto aspect_ratio = 16.0 / 9.0; 
 
     // 暂时强行改变scene =================================
+    
+    // auto objects = make_shared<Group>();
     Group objects;
     auto checker = make_shared<checker_texture>(Vector3f(0.2, 0.3, 0.1), Vector3f(0.9, 0.9, 0.9));
 
     objects.add(make_shared<Sphere>(Vector3f(0,-10, 0), 10, make_shared<lambertian>(checker)));
     objects.add(make_shared<Sphere>(Vector3f(0, 10, 0), 10, make_shared<lambertian>(checker)));
-
+    
     // =================================================
     
 
     // 暂时强行改变camera ================================
+    
     Vector3f background = Vector3f(0.70, 0.80, 1.00);
     Vector3f lookfrom = Vector3f(13,2,3);
     Vector3f lookat = Vector3f(0,0,0);
@@ -102,7 +112,7 @@ void RayTracer::render() {
     int image_height = static_cast<int>(image_width / aspect_ratio);
     Camera *cam = new Camera(image_width, image_height, lookfrom, lookat, vup, 20, aspect_ratio, aperture, dist_to_focus, 0.0, 1.0);
     Image image(image_width, image_height);
-
+    
     // =================================================
 
     // Anti-aliasing
@@ -246,7 +256,8 @@ void RayTracer::render() {
     image.SaveImage(output);
 }
 
-Vector3f RayTracer::traceRay(const Ray& r, int depth, const Vector3f &background, const Group& world) {
+Vector3f RayTracer::traceRay(const Ray& r, int depth, const Vector3f &background, const Group world) {
+// Vector3f RayTracer::traceRay(const Ray& r, int depth, const Vector3f &background, const shared_ptr<Group> world) {
     // Vector3f background = scene->getBackgroundColor();
     // Group *world = scene->getGroup();
     Hit rec;
