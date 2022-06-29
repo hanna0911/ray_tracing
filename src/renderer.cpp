@@ -9,6 +9,8 @@
 #include "texture.hpp"
 #include "ray.hpp"
 #include "hit.hpp"
+#include "box.hpp"
+#include "plane.hpp"
 
 // ====================================================================
 // Ray Casting
@@ -72,24 +74,46 @@ void RayTracer::render() {
     Camera *cam = scene->getCamera();
     int image_width = cam->getWidth();
     int image_height = cam->getHeight();
-    
-    std::cout << image_width << " " << image_height << std::endl;
-
     Image image(image_width, image_height);
     
-    Vector3f background = scene->getBackgroundColor();
-    std::cout << background.x() << " " << background.y() << " " << background.z() << std::endl;
-    
+    Vector3f background = scene->getBackgroundColor();    
     shared_ptr<Group> objects = scene->getGroup();
-    std::cout << objects->objects.size() << std::endl;
-
-    std::cout << scene->getNumMaterials() << std::endl;
     
-    // int image_width = 400;
-    // auto aspect_ratio = 16.0 / 9.0; 
 
     // 暂时强行改变scene =================================
     /*
+    float aspect_ratio = 1.0;
+    int image_width = 600;
+
+    auto objects = make_shared<Group>();
+
+    auto red   = make_shared<lambertian>(Vector3f(.65, .05, .05));
+    auto white = make_shared<lambertian>(Vector3f(.73, .73, .73));
+    auto green = make_shared<lambertian>(Vector3f(.12, .45, .15));
+    auto light = make_shared<diffuse_light>(Vector3f(15, 15, 15));
+
+    objects->add(make_shared<yz_rect>(0, 555, 0, 555, 555, green));
+    objects->add(make_shared<yz_rect>(0, 555, 0, 555, 0, red));
+    objects->add(make_shared<xz_rect>(213, 343, 227, 332, 554, light));
+    objects->add(make_shared<xz_rect>(0, 555, 0, 555, 0, white));
+    objects->add(make_shared<xz_rect>(0, 555, 0, 555, 555, white));
+    objects->add(make_shared<xy_rect>(0, 555, 0, 555, 555, white));
+
+    shared_ptr<Object3D> box1 = make_shared<box>(Vector3f(130, 0, 65), Vector3f(295, 165, 230), white);
+    // box1 = make_shared<rotate_y>(box1, 15);
+    // box1 = make_shared<translate>(box1, vec3(265,0,295));
+    objects->add(box1);
+
+    shared_ptr<Object3D> box2 = make_shared<box>(Vector3f(265, 0, 295), Vector3f(430, 330, 460), white);
+    // box2 = make_shared<rotate_y>(box2, -18);
+    // box2 = make_shared<translate>(box2, vec3(130,0,65));
+    objects->add(box2);
+    */
+
+    /*
+    int image_width = 400;
+    auto aspect_ratio = 16.0 / 9.0; 
+
     // auto objects = make_shared<Group>();
     Group objects;
     auto checker = make_shared<checker_texture>(Vector3f(0.2, 0.3, 0.1), Vector3f(0.9, 0.9, 0.9));
@@ -101,6 +125,20 @@ void RayTracer::render() {
     
 
     // 暂时强行改变camera ================================
+    
+    /*
+    Vector3f background = Vector3f(0,0,0);
+    Vector3f lookfrom = Vector3f(278, 278, -800);
+    Vector3f lookat = Vector3f(278, 278, 0);
+    auto vfov = 40.0;
+    auto aperture = 0.0;
+    Vector3f vup(0,1,0);
+    auto dist_to_focus = 10.0;
+    int image_height = static_cast<int>((float)image_width / aspect_ratio);
+    Camera *cam = new Camera(image_width, image_height, lookfrom, lookat, vup, vfov, aspect_ratio, aperture, dist_to_focus, 0.0, 1.0);
+    Image image(image_width, image_height);
+    */
+   
     /*
     Vector3f background = Vector3f(0.70, 0.80, 1.00);
     Vector3f lookfrom = Vector3f(13,2,3);
@@ -110,7 +148,7 @@ void RayTracer::render() {
     Vector3f vup(0,1,0);
     auto dist_to_focus = 10.0;
     int image_height = static_cast<int>(image_width / aspect_ratio);
-    Camera *cam = new Camera(image_width, image_height, lookfrom, lookat, vup, 20, aspect_ratio, aperture, dist_to_focus, 0.0, 1.0);
+    Camera *cam = new Camera(image_width, image_height, lookfrom, lookat, vup, vfov, aspect_ratio, aperture, dist_to_focus, 0.0, 1.0);
     Image image(image_width, image_height);
     */
     // =================================================

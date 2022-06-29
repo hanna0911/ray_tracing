@@ -1,0 +1,60 @@
+
+Camera {
+    lookfrom 278 278 -800
+    lookat 278 278 0
+    vfov 40.0
+    aperture 0.0
+    vup 0 1 0
+    focus_dist 10.0
+    time0 0
+    time1 0
+    width 600
+    height 600
+}
+
+Lights {
+    numLights 0
+}
+
+Materials {
+    numMaterials 4
+    lambertian {
+        customize 0.65 0.05 0.05
+    }
+    lambertian {
+        customize 0.73 0.73 0.73
+    }
+    lambertian {
+        customize 0.12 0.45 0.15
+    }
+    diffuse_light {
+        customize 15 15 15
+    }
+}
+
+Background {
+    color 0 0 0
+}
+
+Group {
+    numObjects 8
+    MaterialIndex 2
+    yz_rect 0 555 0 555 555
+    MaterialIndex 0
+    yz_rect 0 555 0 555 0
+    MaterialIndex 3
+    xz_rect 213 343 227 332 554
+    MaterialIndex 1
+    xz_rect 0 555 0 555 0
+    xz_rect 0 555 0 555 555
+    xy_rect 0 555 0 555 555
+    box {
+        min 130 0 65
+        max 295 165 230
+    }
+    box {
+        min 265 0 295
+        max 430 330 460
+    }
+}
+

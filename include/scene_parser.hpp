@@ -3,6 +3,7 @@
 
 #include <cassert>
 #include <vecmath.h>
+#include <iostream>
 #include "utils.hpp"
 
 class Camera;
@@ -17,6 +18,11 @@ class Transform;
 class Mesh;
 class texture;
 class lambertian;
+class yz_rect;
+class xz_rect;
+class xy_rect;
+class box;
+class diffuse_light;
 
 #define MAX_PARSER_TOKEN_LENGTH 1024
 
@@ -52,6 +58,7 @@ public:
 
     shared_ptr<Material> getMaterial(int i) const {
     // Material *getMaterial(int i) const {
+        std::cout << "get material index: " << i << std::endl;
         assert(i >= 0 && i < num_materials);
         return materials[i];
     }
@@ -76,7 +83,8 @@ private:
     // Material *parseMaterial();
     shared_ptr<Material> parseMaterial();
     shared_ptr<lambertian> parseLambertian();
-    shared_ptr<texture> parseTexture();
+    shared_ptr<diffuse_light> parseDiffuseLight();
+    shared_ptr<texture> parseTexture(char*);
 
     // Object3D *parseObject(char token[MAX_PARSER_TOKEN_LENGTH]);
     shared_ptr<Object3D> parseObject(char token[MAX_PARSER_TOKEN_LENGTH]);
@@ -91,6 +99,10 @@ private:
     shared_ptr<Mesh> parseTriangleMesh();
     // Transform *parseTransform();
     shared_ptr<Transform> parseTransform();
+    shared_ptr<yz_rect> parseYZRect();
+    shared_ptr<xz_rect> parseXZRect();
+    shared_ptr<xy_rect> parseXYRect();
+    shared_ptr<box> parseBox();
 
     int getToken(char token[MAX_PARSER_TOKEN_LENGTH]);
 

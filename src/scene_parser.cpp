@@ -11,10 +11,11 @@
 #include "group.hpp"
 #include "mesh.hpp"
 #include "sphere.hpp"
-// #include "plane.hpp"
+#include "plane.hpp"
 #include "triangle.hpp"
 #include "transform.hpp"
 #include "texture.hpp"
+#include "box.hpp"
 
 #define DegreesToRadians(x) ((M_PI * x) / 180.0f)
 
@@ -291,6 +292,8 @@ void SceneParser::parseMaterials() {
             materials[count] = parseMaterial();
         } else if (!strcmp(token, "lambertian")) {
             materials[count] = parseLambertian();
+        } else if (!strcmp(token, "diffuse_light")) {
+            materials[count] = parseDiffuseLight();
         } else {
             printf("Unknown token in parseMaterial: '%s'\n", token);
             exit(0);
@@ -299,23 +302,46 @@ void SceneParser::parseMaterials() {
     }
     getToken(token);
     assert (!strcmp(token, "}"));
+    std::cout << "finished parse materials" << std::endl;
+}
+
+shared_ptr<diffuse_light> SceneParser::parseDiffuseLight() {
+    char token[MAX_PARSER_TOKEN_LENGTH];
+    getToken(token);
+    assert (!strcmp(token, "{"));
+    getToken(token); // texture token
+    if (!strcmp(token, "customize")) {
+        Vector3f custom = readVector3f();
+        getToken(token);
+        assert (!strcmp(token, "}"));
+        return make_shared<diffuse_light>(custom);
+    }
+    shared_ptr<texture> text = parseTexture(token);
+    getToken(token);
+    assert (!strcmp(token, "}"));
+    return make_shared<diffuse_light>(text);
 }
 
 shared_ptr<lambertian> SceneParser::parseLambertian() {
     char token[MAX_PARSER_TOKEN_LENGTH];
     getToken(token);
     assert (!strcmp(token, "{"));
-    shared_ptr<texture> text = parseTexture();
+    getToken(token); // texture token
+    if (!strcmp(token, "customize")) {
+        Vector3f custom = readVector3f();
+        getToken(token);
+        assert (!strcmp(token, "}"));
+        return make_shared<lambertian>(custom);
+    }
+    shared_ptr<texture> text = parseTexture(token);
     getToken(token);
     assert (!strcmp(token, "}"));
     return make_shared<lambertian>(text);
 }
 
-shared_ptr<texture> SceneParser::parseTexture() {
-    char token[MAX_PARSER_TOKEN_LENGTH];
+shared_ptr<texture> SceneParser::parseTexture(char* token) {
     shared_ptr<texture> text;
     while (true) {
-        getToken(token);
         if (!strcmp(token, "checker")) {
             getToken(token);
             assert(!strcmp(token, "{"));
@@ -347,6 +373,7 @@ shared_ptr<texture> SceneParser::parseTexture() {
             printf("Unknown token in texture: '%s'\n", token);
             exit(0);
         }
+        getToken(token);
     }
     return text; // can be deleted
 }
@@ -385,6 +412,7 @@ shared_ptr<Material> SceneParser::parseMaterial() {
 shared_ptr<Object3D> SceneParser::parseObject(char token[MAX_PARSER_TOKEN_LENGTH]) {
 // Object3D *SceneParser::parseObject(char token[MAX_PARSER_TOKEN_LENGTH]) {
     // Object3D *answer = nullptr;
+    std::cout << ", token: " << token << std::endl;
     shared_ptr<Object3D> answer;
     if (!strcmp(token, "Group")) {
         // answer = (Object3D *) parseGroup();
@@ -403,10 +431,20 @@ shared_ptr<Object3D> SceneParser::parseObject(char token[MAX_PARSER_TOKEN_LENGTH
     } else if (!strcmp(token, "Transform")) {
         // answer = (Object3D *) parseTransform();
         answer = parseTransform();
+    } else if (!strcmp(token, "yz_rect")) {
+        answer = parseYZRect();
+    } else if (!strcmp(token, "xz_rect")) {
+        answer = parseXZRect();
+    } else if (!strcmp(token, "xy_rect")) {
+        answer = parseXYRect();
+    } else if (!strcmp(token, "box")) {
+        answer = parseBox();
+        std::cout << "finished parsing box" << std::endl;
     } else {
         printf("Unknown token in parseObject: '%s'\n", token);
         exit(0);
     }
+    std::cout << "finish parsing objects" << std::endl;
     return answer;
 }
 
@@ -431,6 +469,7 @@ shared_ptr<Group> SceneParser::parseGroup() {
     getToken(token);
     assert (!strcmp(token, "numObjects"));
     int num_objects = readInt();
+    std::cout << "numobjects of group: " << num_objects << std::endl;
 
     // auto *answer = new Group(num_objects);
     shared_ptr<Group> answer = make_shared<Group>(num_objects);
@@ -446,6 +485,7 @@ shared_ptr<Group> SceneParser::parseGroup() {
             current_material = getMaterial(index);
         } else {
             // Object3D *object = parseObject(token);
+            std::cout << "get object index: " << count;
             shared_ptr<Object3D> object = parseObject(token);
             assert (object != nullptr);
             // answer->addObject(count, object);
@@ -458,6 +498,7 @@ shared_ptr<Group> SceneParser::parseGroup() {
     assert (!strcmp(token, "}"));
 
     // return the group
+    std::cout << "finished parse group" << std::endl;
     return answer;
 }
 
@@ -538,6 +579,62 @@ shared_ptr<Mesh> SceneParser::parseTriangleMesh() {
     // Mesh *answer = new Mesh(filename, current_material);
     shared_ptr<Mesh> answer = make_shared<Mesh>(filename, current_material);
     return answer;
+}
+
+shared_ptr<box> SceneParser::parseBox() {
+    char token[MAX_PARSER_TOKEN_LENGTH];
+    getToken(token);
+    assert (!strcmp(token, "{"));
+    Vector3f min, max;
+    while (true) {
+        getToken(token);
+        if (!strcmp(token, "}")) {
+            break;
+        } else if (!strcmp(token, "min")) {
+            min = readVector3f();
+            std::cout << "min: " << min.x() << " " << min.y() << " " << min.z() << std::endl;
+        } else if (!strcmp(token, "max")) {
+            max = readVector3f();
+            std::cout << "max: " << max.x() << " " << max.y() << " " << max.z() << std::endl;
+        } else {
+            printf("Unknown token in parseBox: '%s'\n", token);
+            exit(0);
+        }
+    }
+    std::cout << "exit from here? " << std::endl;
+    shared_ptr<box> answer = make_shared<box>(min, max, current_material);
+    std::cout << "created box answer" << std::endl;
+    return answer;
+}
+
+shared_ptr<xy_rect> SceneParser::parseXYRect() {
+    float x0, x1, y0, y1, k;
+    x0 = readFloat();
+    x1 = readFloat();
+    y0 = readFloat();
+    y1 = readFloat();
+    k = readFloat();
+    return make_shared<xy_rect>(x0, x1, y0, y1, k, current_material);
+}
+
+shared_ptr<xz_rect> SceneParser::parseXZRect() {
+    float x0, x1, y0, y1, k;
+    x0 = readFloat();
+    x1 = readFloat();
+    y0 = readFloat();
+    y1 = readFloat();
+    k = readFloat();
+    return make_shared<xz_rect>(x0, x1, y0, y1, k, current_material);
+}
+
+shared_ptr<yz_rect> SceneParser::parseYZRect() {
+    float x0, x1, y0, y1, k;
+    x0 = readFloat();
+    x1 = readFloat();
+    y0 = readFloat();
+    y1 = readFloat();
+    k = readFloat();
+    return make_shared<yz_rect>(x0, x1, y0, y1, k, current_material);
 }
 
 shared_ptr<Transform> SceneParser::parseTransform() {
